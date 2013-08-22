@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Gastón Ramos</title>
+  <link rel="alternate" type="text/html"
+	href="http://www.gastonramos.com.ar/blog" />
+  <link rel="self" href="http://www.gastonramos.com.ar/blog/index.atom" />
+  <author>
+    <name>Gastón Ramos Author</name>
+    <uri>http://www.gastonramos.com.ar/</uri>
+    <email>ramos.gaston at gmail.com</email>
+  </author>
+  <subtitle type="text">[&quot;!&quot;, &quot;d&quot;, &quot;l&quot;, &quot;r&quot;, &quot;o&quot;, &quot;w&quot;, &quot;, &quot;, &quot;o&quot;, &quot;l&quot;, &quot;l&quot;, &quot;e&quot;, &quot;h&quot;].reverse.inject{|v, m| v + m}</subtitle>
+  <id>tag:chneukirchen@gmail.com,2004-11:nukumi2-example-blog-feed</id>
+  <generator version="0.5">Nukumi2</generator>
+  <rights type="xhtml">
+  <div xmlns="http://www.w3.org/1999/xhtml">
+  Copyright © 2008 Gastón Ramos Author, ramos.gaston@gmail.com
+Verbatim copying is permitted as long as this message is preserved.  
+  </div>
+  </rights>
+  <updated>2008-08-08T12:32:28-03:00</updated>
+    <entry>
+    <title>Rubinius FFI and subtend</title>
+    <category term="rubinius" />
+    <author>
+      <name>Gastón Ramos Author</name>
+      <uri>http://www.gastonramos.com.ar/</uri>
+      <email>ramos.gaston at gmail.com</email>
+    </author>
+    <link rel="alternate" type="text/html"
+	  href="http://www.gastonramos.com.ar/blog/archive/2008/08/rubinius-ffi-and-subtend.html" />
+    <id>tag:chneukirchen@gmail.com,2004-11:nukumi2-example-blog-x-20080807-231338</id>
+    <updated>2008-08-08T12:32:28-03:00</updated>
+    <published>2008-08-07T20:13:38-03:00</published>
+    <content type="xhtml" >
+    <div xmlns="http://www.w3.org/1999/xhtml">
+<p><strong>Related links:</strong></p>
+
+<p><a href="http://sourceware.org/libffi/">libffi - a portable foreign function interface library</a></p>
+
+<p><a href="http://pluskid.lifegoo.com/?p=370">Free mind / On the Rubinius FFI</a></p>
+
+<p><a href="http://blog.segment7.net/articles/2008/01/15/rubinius-foreign-function-interface">Segment7 / Rubinius&#8217; Foreign Function Interface</a></p>
+    </div>
+    </content>
+  </entry>
+    <entry>
+    <title>Building rubinius debian package</title>
+    <category term="rubinius" />
+    <author>
+      <name>Gastón Ramos Author</name>
+      <uri>http://www.gastonramos.com.ar/</uri>
+      <email>ramos.gaston at gmail.com</email>
+    </author>
+    <link rel="alternate" type="text/html"
+	  href="http://www.gastonramos.com.ar/blog/archive/2008/08/building-rubinius-debian-package.html" />
+    <id>tag:chneukirchen@gmail.com,2004-11:nukumi2-example-blog-x-20080806-231351</id>
+    <updated>2008-08-07T20:14:10-03:00</updated>
+    <published>2008-08-06T20:13:51-03:00</published>
+    <content type="xhtml" >
+    <div xmlns="http://www.w3.org/1999/xhtml">
+<p>I&#8217;m  trying to build a <a href="http://github.com/gramos/rubinius/tree/master">debian package</a>
+for <a href="http://rubini.us">rubinius</a>, my knowledges about vm and c
+compiling are very litle, but&#8230; here we go!</p>
+
+<p>I&#8217;m going to see required libs to run rubinius</p>
+
+<pre>
+
+[gramos@marlasina] cd ~/src/rubinius/
+
+[gramos@marlasina] ldd shotgun/lib/librubinius-0.9.0.so
+
+ linux-gate.so.1 =>  (0xffffe000)
+ libz.so.1 => /usr/lib/libz.so.1 (0xb7dfa000)
+ libm.so.6 => /lib/libm.so.6 (0xb7dd5000)
+ libdl.so.2 => /lib/libdl.so.2 (0xb7dd1000)
+ librt.so.1 => /lib/librt.so.1 (0xb7dc7000)
+ libcrypt.so.1 => /lib/libcrypt.so.1 (0xb7d95000)
+ libc.so.6 => /lib/libc.so.6 (0xb7c60000)
+ /lib/ld-linux.so.2 (0x80000000)
+ libpthread.so.0 => /lib/libpthread.so.0 (0xb7c49000)
+
+[gramos@marlasina] dlocate /usr/lib/libz.so.1
+
+  zlib1g: /usr/lib/libz.so.1.2.3.3
+  zlib1g: /usr/lib/libz.so.1
+
+</pre>
+
+<p>As we can see, the package&#8217;s name is zlib1g</p>
+
+<pre>
+
+[gramos@marlasina] dpkg -l | grep zlib1g
+
+ii  zlib1g       1:1.2.3.3.dfsg-12  compression library - runtime
+ii  zlib1g-dev   1:1.2.3.3.dfsg-12  compression library - development
+
+[gramos@marlasina] ldd /usr/lib/libz.so.1
+   linux-gate.so.1 =>  (0xffffe000)
+   libc.so.6 => /lib/libc.so.6 (0xb7df6000)
+   /lib/ld-linux.so.2 (0x80000000)
+
+[gramos@marlasina] dlocate /lib/libc.so.6
+  libc6: /lib/libc.so.6
+
+[gramos@marlasina] dlocate /lib/libdl.so.2
+  libc6: /lib/libdl.so.2
+
+[gramos@marlasina] dlocate /lib/librt.so.1
+  libc6: /lib/librt.so.1
+
+[gramos@marlasina] dlocate /lib/libcrypt.so.1
+  libc6: /lib/libcrypt.so.1
+
+[gramos@marlasina] dlocate /lib/libpthread.so.0
+  libc6: /lib/libpthread.so.0
+
+[gramos@marlasina] dpkg -l | grep libc6
+
+ii  libc6      2.7-10  GNU C Library: Shared libraries
+ii  libc6-dev  2.7-10  GNU C Library: Development Libraries and Headers
+
+</pre>
+
+<p>As we can see, the package&#8217;s name is libc6, in theory only two libs are required:
+<strong>libc6 (>= 2.4) and zlib1g</strong>.</p>
+
+<p>apt-get install libc6 zlib1g</p>
+
+<p>You can <a href="http://gastonramos.com.ar/rubinius/download/rubinius_0.9.0-1_i386.deb">download</a> my experimental rubinius package:</p>
+
+<p>Feedbacks are welcome. ( ramos.gaston at gmail dot com )</p>
+
+<p><strong>Related links:</strong></p>
+
+<p><a href="http://www.debian.org/doc/maint-guide/index.en.html">Debian New Maintainers&#8217; Guide</a></p>
+
+<p>It will continue&#8230;</p>
+    </div>
+    </content>
+  </entry>
+  
+</feed>

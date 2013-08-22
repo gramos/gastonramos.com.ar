@@ -1,0 +1,341 @@
+<html>
+<head>
+<title>Curriculum Vitae - Gast&oacute;n Ramos - T&eacute;cnico en Inform&aacute;tica.</title>
+<LINK REL="stylesheet" href="estilo.css" type="text/css">
+</head>
+<body>
+<table width="600" align="center" border="0" bgcolor="#DEDEDE">
+<tr><TD align="center">
+<table width="100%" cellspacing="8" bgcolor="white">
+<TR>
+    <TD align="center" bgcolor="#DEDEDE">
+      <b id="grande">Curriculum Vitae - Gast&oacute;n Ramos - T&eacute;cnico en Inform&aacute;tica.<br> <br></b>
+    </TD>
+</TR>
+
+<TR>
+    <TD>
+        <hr noshade="true" >
+    </TD>
+</TR>
+</table>
+
+<table width="100%" cellspacing="8" bgcolor="white">
+<TR>
+    <TD bgcolor="#09148C" colspan="2">
+        <font class="titulo">Datos Personales: </font>
+    </TD>
+</TR>
+<TR>
+    <TD>
+         <IMG src="foto.jpg" > 
+    </TD>
+    <TD>
+         <b>DNI: </b><font class="parrafo"> 26289622 <br>
+	 <b> Fecha de nacimiento: </b>28 de Noviembre 1977<br>
+	 <b> Edad: </b>27 anos <br>
+	 <b>Nacionalidad:</b>Argentino<br>
+	 <b>Lugar de Nacimiento:</b> Santa Fe <br>
+	 <b>Domicilio: </b>Pasaje Lassaga 4732 <br>
+	 <b>Telefono:</b> 54-342-155025291<br>
+	 <b>Email: </b><A href="mailto:ramos.gaston@gmail.com">ramos.gaston@gmail.com
+	 	</A>&nbsp; - &nbsp;
+		<A href="mailto:gramos@rectorado.unl.edu.ar">gramos@rectorado.unl.edu.ar
+	 	</A><br>
+    </TD>
+</TR>
+</table>
+
+<table width="100%" cellspacing="8" bgcolor="white">
+  <tr>   
+     <TD bgcolor="#09148C">
+           <font class="titulo">Estudios Primarios: </font>
+     </TD>
+  </tr>
+  <tr>
+     <td>
+         <b class="subtitulo"> Colegio: </b><font class="parrafo"> Don Bosco <br>  
+     	 <b class="subtitulo"> Domicilio: </b>  E. Zeballos 3333 - Santa Fe <br>
+	 <b class="subtitulo"> Telefono: </b>  4893453<br>
+     </td>
+  </tr>       
+<tr>   
+     <TD bgcolor="#09148C">
+           <font class="titulo">Estudios Secundarios: </font>
+     </TD>
+  </tr>
+  <tr>
+     <td>
+         <b class="subtitulo"> Ciclo B&aacute;sico: </b><font class="parrafo">
+	         Escuela Industrial Superior<br>  
+         <b class="subtitulo"> Domicilio: </b>Junin 2800<br> 
+     	 <b class="subtitulo"> Ciclo Superior: </b>E.E.T. Nro. 478 Dr. Nicolas Avellaneda<br>
+	 <b class="subtitulo"> Domicilio: </b>Calcena 955<br> 
+	 <b class="subtitulo"> Telefono: </b>4520248<br>
+     </td>
+  </tr>       
+  
+  <tr>   
+     <TD bgcolor="#09148C">
+           <font class="titulo">Estudios Universitarios: </font>
+     </TD>
+  </tr>
+
+  <tr>
+     <td>
+         <b class="subtitulo">Facultad: </b><font class="parrafo">
+	         Facultad de Ingeniria y Ciencias H&iacute;dricas<br>  
+         <b class="subtitulo"> Domicilio: </b>Junin 2800<br> 
+     	 <b class="subtitulo"> Ciclo Superior: </b>E.E.T. Nro. 478 Dr. Nicolas Avellaneda<br>
+	 <b class="subtitulo"> Domicilio: </b>Calcena 955<br> 
+	 <b class="subtitulo"> Telefono: </b>4520248<br>
+     </td>
+  </tr>
+  
+  <tr>   
+     <TD bgcolor="#09148C">
+           <font class="titulo">Capacitaci&oacute;n: </font>
+     </TD>
+  </tr>
+  <tr>
+     <td>
+         <i>
+	 <li>CCNA 1 - Cisco Certified Networking Asociate - Cisco Networking Academy -
+	     Dise&#241;o, Administraci&oacuten y Mantenimiento de Redes Inform&aacute;ticas.
+	 </li>        
+	 
+         <li>I Jornada Provincial Interdisciplinaria Documento 
+	     Electr&oacute;nico y Firma Digital.
+	 </li>
+	 
+	 <li>Congreso Internacional de Inform&aacute;tica Educativa.
+	 </li>
+	         
+	 <li>I Encuentro de Nuevas Tecnolog&iacute;as Y medios 
+	     Aplicados a la Educacion (FICH).
+	 </li>        
+	 
+	 <li>1ras Jornadas GNU / LINUX (FICH).
+	 </li>        
+	 
+	 <li>Tecnolog&iacute;a Bluetooth (FICH).
+	 </li>        
+	 
+	 <li> Dise&#241;o de P&aacute;ginas Web - I Encuentro de Nuevas Tecnolog&iacute;as y Medios 
+	     Aplicados a la Educaci&oacute;n (FICH).
+	 </li>        
+	 
+	 <li> Desarrollo de Aplicaciones Hipermediales.
+	 </li>        
+	 
+	 <li>1er Congreso Nacional de Estudiantes de Inform&aacute;tica (FICH).
+	 </li>        
+	 
+	 </ul>
+     </td>
+  </tr>
+  
+  <tr>   
+     <TD bgcolor="#09148C">
+           <font class="titulo">Experiencia Laboral: </font>
+     </TD>
+     
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Universidad Nacional del Litoral - Prog. de Inf. y
+		 Planificaci&oacute;n Tecnol&oacute;gica<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Febrero 2005<br> 
+     	 <b class="subtitulo" id ="laboral">Desempeño: </b>Desarrollo de Aplicaciones Web - 
+	 Sistemas de Bases de Datos .<br> 
+	 <b class="subtitulo" id ="laboral">Tecnolog&iacute;a: </b>PHP - PostgreSql - PHPunits - 
+	 CVS (Sistema de Control de Versi&oacute;n)<br> 
+	 <b class="subtitulo" id ="laboral"> Tel&eacute;fono: </b>4571110 int: 171<br>
+	 </div>
+     </td>
+  </tr>
+   
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+     
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Grupo de Desarrollo de Software Libre<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Febrero 2005<br> 
+     	 <b class="subtitulo" id ="laboral">Desempeño: </b>Desarrollo de Aplicaciones Web - 
+	 Sistemas de Bases de Datos .<br> 
+	 <b class="subtitulo" id ="laboral">Tecnolog&iacute;a: </b>PHP - PostgreSql - PHPunits - Python -
+	 CVS (Sistema de Control de Versi&oacute;n)<br> 
+	 <b class="subtitulo" id ="laboral"> Tel&eacute;fono: </b>4575100 <br>
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Facultad de Arquitectura Dise&#241;o y Urbanismo<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Agosto 2004<br> 
+	 <b class="subtitulo" id ="laboral">Fecha de desvinculaci&oacute;n: </b>Marzo 2005<br>
+     	 <b class="subtitulo" id ="laboral">Desempeño: </b>Administrador de la Red - Configuraci&oacute;n 
+	 de Servidor Web - Configuraci&oacute;n / Administraci&oacute;n Firewall - Soporte T&eacute;cnico.<br> 
+	 <b class="subtitulo" id ="laboral">Tecnolog&iacute;a: </b>Linux Debian - IPcop V 1.3 - Apache - 
+	 PHP4 - MySQL. <br> 
+	 <b class="subtitulo" id ="laboral"> Tel&eacute;fono: </b>4575100 <br>
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Universidad Nacional del Litoral - Prog. de Inf. y
+		 Planificaci&oacute;n Tecnol&oacute;gica<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Mayo 2002<br> 
+     	 <b class="subtitulo" id ="laboral">Desempeño: </b>Soporte T&eacute;cnico Inform&aacute;tico - 
+	 Migraci&oacute;n a GNU / DEBIAN Linux - Instalaci&oacute;n de Puestos de Red - Help Desk -
+	 Configuraci&oacute;n de Sistemas Linux
+	 <br> 
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Facultad de Ingenier&iacute;a y Ciencias H&iacute;dricas<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Julio 2002<br> 
+     	 <b class="subtitulo" id ="laboral">Desempeño: </b>Ayudante de C&aacute;tedra de Fundamentos de 
+	 Programaci&oacute;n y Programaci&oacute;n I<br> 
+	 <b class="subtitulo" id ="laboral"> Telefono: </b>4575233<br>
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Facultad de Ingenier&iacute;a y Ciencias H&iacute;dricas<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Agosto 2000<br> 
+     	 <b class="subtitulo" id ="laboral">Fecha de desvinculaci&oacute;n: </b>Marzo 2005<br>
+	 <b class="subtitulo" id ="laboral">Desempeño: </b>Soporte T&eacute;cnico (Armado y reparaci&oacute;n de 
+	  equipos Inform&aacute;ticos, Reparaci&oacute;n de Impresoras - 
+	  Configuraci&oacute;n de Perif&eacute;ricos.<br> 
+	 
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Instituci&oacute;n: </b><font class="parrafo" id ="laboral">
+	         Escuela Domingo Faustino Sarmiento <br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Octubre 2000<br> 
+     	 <b class="subtitulo" id ="laboral">Fecha de desvinculaci&oacute;n: </b>Diciembre 2001<br>
+	 <b class="subtitulo" id ="laboral">Desempeño: </b>Profesor de Inform&aacute;tica<br> 
+	 
+	 </div>
+     </td>
+  </tr>
+  
+    
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+	  </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+         <div class="laboral">
+	 <b class="subtitulo" id ="laboral">Empresa: </b><font class="parrafo" id ="laboral">
+	         Intercom Soluciones Inform&aacute;ticas<br>  
+         <b class="subtitulo" id ="laboral">Fecha de Ingreso: </b>Febrero 1998<br> 
+     	 <b class="subtitulo" id ="laboral">Fecha de desvinculaci&oacute;n: </b>Mayo 1999<br>
+	 <b class="subtitulo" id ="laboral">Desempeño: </b>Soporte T&eacute;cnico (Armado y reparaci&oacute;n de 
+	  equipos Inform&aacute;ticos, Instalaci&oacute;n de Redes LAN - 
+	  Reparaci&oacute;n de Impresoras - Configuraci&oacute;n de Perif&eacute;ricos.<br> 
+	 <b class="subtitulo" id ="laboral"> Telefono: </b>4520248<br>
+	 </div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td>
+          <div class="laboral">
+	  <hr>
+          </div> 
+     </td>
+  </tr>
+  <tr>
+     <td align="center" bgcolor="#DEDEDE">
+          
+	Gast&oacute;n Ramos <div class="chica" id="roja">
+	&Uacute;ltima actualizaci&oacute;n 13/06/2005
+        </div>
+     </td>
+  </tr>
+  
+</table>
+</font>
+</TD></tr>
+</table>
+</body>
+</html>

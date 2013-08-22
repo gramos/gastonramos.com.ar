@@ -1,0 +1,104 @@
+font.chica {
+	font-family:arial, helvetica;
+	color:#09148C;
+	font-size: 10px;
+	text-align: center;
+}
+
+font.parrafo {
+	font-family:arial, helvetica;
+	color:#09148C;
+	font-size: 11px;
+	text-align: center;
+}
+
+div.laboral { 
+   margin-left: 40
+}
+
+#roja {color: red;
+       font-size: 10px;
+	   }
+
+#blanca {
+     color: white;
+	 
+	   	}
+
+P.titulotabla {
+	color:Black;
+	font-size: 15px;
+	background:#FBB209;
+	margin-left: 100px;
+	margin-right: 112px;
+}
+
+font.titulo {
+	font-family:arial, helvetica;
+	color:#FFFFFF;
+	font-family:arial;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-right: 10px;
+	}
+    
+
+font.titulogrande {
+	font-family:arial, helvetica;
+	color:#F86F07;
+	font-family:arial;
+	font-size: 15px;
+	margin-left: 30px;
+	margin-right: 112px;
+}
+font.negra {color:black;}
+
+B {
+   font-size: 12px;
+   font-family: arial, helvetica;
+   color: black;
+}
+
+B.subtitulo {
+   font-size: 12px;
+   font-family: arial, helvetica;
+   margin-left: 40px;
+   color: black;
+
+}
+
+#grande {
+font-size: 16px;
+   font-family: arial, helvetica;
+}
+
+#laboral {
+   margin-left: 0px;
+}
+
+li { 
+   font-family:arial, helvetica;
+   font-size: 12px;
+   margin-left: 40px;
+}
+
+#naranja{color:#FF0000;}
+#blanca{color:#FFF5F4;}
+
+
+P.parrafo {
+		font-family: arial, helvetica;
+		color: #000000;
+		margin-left: 10px;
+		font-family: arial, helvetica;
+		margin-right: 5px;
+        text-align: justify;
+		font-size: 11px;
+	}
+
+#pie{
+
+		margin-left: 0px;
+		font-size: 10px;
+	}
+

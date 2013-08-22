@@ -1,0 +1,18 @@
+###############################################################################
+# ChunkyCode blog
+
+check process mongrel_chunkycode_3500 with pidfile /var/www/apps/chunkycode.com.ar/shared/pids/mongrel-chunkycode.com.ar.3500.pid
+  start program = "/usr/bin/mongrel_rails cluster::start -C  /var/www/apps/chunkycode.com.ar/shared/config/mongrel_cluster.yml --clean --only 3500 "
+
+  stop program = "/usr/bin/mongrel_rails cluster::stop -C  /var/www/apps/chunkycode.com.ar/shared/config/mongrel_cluster.yml --clean --only 3500 "
+
+  if failed host 127.0.0.1 port 3500 protocol http
+    with timeout 10 seconds
+    then restart
+	
+  if totalmem > 100 Mb then restart
+  if cpu is greater than 90% for 2 cycles then alert
+  if cpu > 90% for 5 cycles then restart
+  if loadavg(5min) greater than 10 for 8 cycles then restart
+  if 5 restarts within 5 cycles then timeout
+

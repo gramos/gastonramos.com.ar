@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>My Preso</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  
+    
+  
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
+<p class="notes">first slide</p>
+
+<h2>Programaci&#xF3;n Extrema, aceptar el cambio</h2>
+
+<p>Meetup Rubylit 7 de febrero 2013
+<img src="./file/one/Morpheus.jpg" width="765" height="941" alt="Morpheus"/>
+</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/2">
+<h1>&#xBF;Qu&#xE9; es XP?</h1>
+
+<p>&#xC1;gil, Eficiente, Bajo riesgo, predecible, cient&#xED;fica, divertida.</p>
+
+<p>Disciplina para desarrollar Software</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/3">
+<p><em>"I always thought that Smalltalk would beat Java, I just didn&#x2019;t know that it would be called" &#x2018;Ruby&#x2019; when it did.</em> &#x2014; Kent Beck</p>
+
+<p><img src="./file/one/Kent.jpg" width="853" height="1280" alt="Kent"/>
+</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/4">
+<h1>&#xBF;Por qu&#xE9; eXtrema?</h1>
+
+<p>Todas las practicas de sentido com&#xFA;n al extremo</p>
+
+<h1>\m/</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/5">
+<p class="notes"> Revisiones de c&#xF3;digo todo el tiempo, Testear todo el tiempo incluso con el cliente, El dise&#xF1;o como ocupaci&#xF3;n diaria de <em>todos</em>, La cosa m&#xE1;s sencilla que pueda llegar a funcionar, Todos refinaran la arquitectura todo el tiempo.</p>
+
+<ul>
+<li>Pair Programming</li>
+<li>Units Test + Acceptance Test</li>
+<li>Refactoring</li>
+<li>Kiss</li>
+<li>Metafora</li>
+<li>Integration tests</li>
+<li>Iteraciones cortas segundos, minutos, horas.</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/6">
+<p class="notes">Trabajar en cosas que realmente importan, cada d&#xED;a. No van a enfrentar situaciones aterradoras solos. Van a provechar todas sus energ&#xED;as para que su sistema tenga &#xE9;xito. Tomar&#xE1;n las decisiones que puedan tomar mejor</p>
+
+<h1>XP promete a los programadores:</h1>
+
+<ul>
+<li>Trabajar en lo importante</li>
+<li>No m&#xE1;s situaciones en soledad</li>
+<li>Energ&#xED;a para el &#xE9;xito</li>
+<li>Mejores decisiones </li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/7">
+<p class="notes">En res&#xFA;men XP promete reducir el riesgo del proyecto, mejorando
+la sensibilidad a los cambios del negocio, mejorando la productividad
+a lo largo de la vida del sistema; y a&#xF1;ade diversi&#xF3;n a la construcci&#xF3;n de software en equipo --todo al mismo--.Es cierto. No se r&#xED;a. Ahora van a tener que 
+escuchar el resto de la charla para ver si estoy Loco</p>
+
+<h1>XP promete a los clientes y directivos:</h1>
+
+<ul>
+<li>El mayor valor posible cada semana</li>
+<li>Progresos concretos</li>
+<li>Cambiar la direccion a la mitad sin gran costo</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/8">
+<h1>Si! en serio!</h1>
+
+<p>Ahora van a tener que escuchar el resto de la charla
+para ver si estoy loco.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/9">
+<h1>El riesgo</h1>
+
+<p>El desarrollo de software fracasa en la entrega y en la entrega de valor.</p>
+
+<h2>Impacto Econ&#xF3;mico y Humano</h2>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/10">
+<ul>
+<li>Retrasos de planificaci&#xF3;n</li>
+<li>Proyecto cancelado</li>
+<li>El sistema se deteriora</li>
+<li>Alto nivel de bugs</li>
+<li>Requisitos mal comprendidos</li>
+<li>Cambios del negocio</li>
+<li>Falsa riquesa de caracter&#xED;sticas</li>
+<li>Cambios de personal</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/11">
+<h1>El costo del cambio</h1>
+
+<p>Crece exponencialmente con el tiempo</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/12">
+<h1>Esta curva no siempre es v&#xE1;lida.</h1>
+
+<p>Tecnolog&#xED;a + Pr&#xE1;cticas de codificaci&#xF3;n = Curva ** -1 </p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/13">
+<h1>Para que nuestro c&#xF3;digo sea m&#xE1;s f&#xE1;cil de modificar, tenemos que:</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/14">
+<h1>Dise&#xF1;o simple</h1>
+
+<p>sin elementos extras, es decir 
+sin ideas que no vamos a usar ahora pero que esperamos usar en el futuro.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/15">
+<h1>Pruebas automatizadas</h1>
+
+<p>con ellas tendremos la confianza en que conoceremos
+si cambiamos accidentalmente el comportamiento del sistema.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/16">
+<h1>Adquirir pr&#xE1;ctica en modificar el dise&#xF1;o</h1>
+
+<p>de tal forma que cuando vienen los tiempos de cambio al sistema,
+no tendremos miedo al tratarlos.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/17">
+<ul>
+<li>Dise&#xF1;o sencillo</li>
+<li>Tests + Actitud de refinamiento constante</li>
+</ul>
+
+<h1>=</h1>
+
+<p>Achatamiento de la curva del costo de desarrollo</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/18">
+<h1>Cuatro valores</h1>
+
+<ul>
+<li>Comunicaci&#xF3;n</li>
+<li>Sencillez</li>
+<li>Realimentaci&#xF3;n</li>
+<li>Valent&#xED;a</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/19">
+<h1>Comunicaci&#xF3;n</h1>
+
+<p>A veces un programador no le dice a otro alg&#xFA;n cambio cr&#xED;tico
+en el dise&#xF1;o del sistema.</p>
+
+<p>A veces un programador no hace al cliente la pregunta adecuada</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/20">
+<h1>Probar, emparejarse y estimar</h1>
+
+<p>hacen que programadores, clientes
+y directores se tengan que comunicar.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/21">
+<h1>Sencillez</h1>
+
+<h2>&#xBF;Qu&#xE9; es lo m&#xE1;s simple que pueda llegar a funcionar?</h2>
+
+<p>La sencillez no es f&#xE1;cil. Una de las cosas m&#xE1;s dif&#xED;ciles del mundo
+es no mirar lo que necesitar&#xE1;s implementar ma&#xF1;ana, la pr&#xF3;xima semana
+y el pr&#xF3;ximo mes.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/22">
+<p><em>"No me preguntes a m&#xED;, preg&#xFA;ntale al sistema"</em></p>
+
+<p><em>"&#xBF;Has escrito los casos de prueba para esto?"</em></p>
+
+<h1>Realimentaci&#xF3;n</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/23">
+<p><em>"El caucho tiene que tocar el asfalto"</em></p>
+
+<p>Hay que poner las historias m&#xE1;s importantes en producci&#xF3;n 
+tan pronto como sea posible.</p>
+
+<h1>Realimentaci&#xF3;n</h1>
+
+<p>El desarrollo es un estado temporal del sistema,
+este necesita cobrar vida propia</p>
+
+<h1>Producci&#xF3;n</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/24">
+<h1>Valent&#xED;a</h1>
+
+<ul>
+<li>Tirar c&#xF3;digo </li>
+<li>Probar 3 dise&#xF1;os distintos 
+(uno por d&#xED;a)</li>
+<li>La comunicaci&#xF3;n apoya la valent&#xED;a 
+(no me gusta esto!)</li>
+<li>Experimentos de alto riesgo y grandes recompensas</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/25">
+<h1>Algunos principios</h1>
+
+<ul>
+<li>Ense&#xF1;ar a aprender</li>
+<li>Peque&#xF1;as inversiones iniciales</li>
+<li>Jugar a ganar</li>
+<li>Experimentos concretos</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/26">
+<h1>Trabajar con los instintos de las personas, no contra ellos</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/27">
+<h1>A las personas les gusta <strong>ganar</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/28">
+<h1>A las personas les gusta <strong>aprender</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/29">
+<h1>A las personas les gusta <strong>relacionarse con otras personas</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/30">
+<h1>A las personas les gusta  <strong>formar parte de un equipo</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/31">
+<h1>A las personas les gusta <strong>estar bajo control</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/32">
+<h1>A las personas les gusta <strong>ser leales</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/33">
+<h1>A las personas les gusta <strong>hacer bien su trabajo</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/34">
+<h1>A las personas les gusta <strong>que su software funcione</strong></h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/35">
+<ul>
+<li>Aceptar la responsabilidad</li>
+<li>Adaptaci&#xF3;n particular</li>
+<li>Ir liviano de equipaje</li>
+<li>Medidas honestas</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/36">
+<h1>Codificar, probar, escuchar, dise&#xF1;ar</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/37">
+<h1>Test infected</h1>
+
+<p>Cualquier cosa que no pueda ser medida no existe.
+Las caracter&#xED;sticas de software que no puedan ser demostradas
+mediante pruebas automatizadas, simplemente no existen.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/38">
+<h1>A largo plazo</h1>
+
+<p>Las pruebas automatizadas mantienen el el programa vivo
+m&#xE1;s tiempo, cuando las tienes puedes hacer m&#xE1;s cambios
+duramente m&#xE1;s tiempo.</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/39">
+<h1>A corto plazo</h1>
+
+<p>Es m&#xE1;s divertido programar con tests que sin ellos.
+Te dan m&#xE1;s confianza.
+<em>Es lindo ver que todo est&#xE1; verde.</em> </p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/40">
+<p><img src="./file/one/circles.jpg" width="720" height="540" alt="Xp Best Practices"/>
+</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/41">
+<h1>Recursos:</h1>
+
+<p><a href="http://xprogramming.com/">http://xprogramming.com/</a></p>
+
+<p><a href="http://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0201616416">Extreme Programming Explained: Embrace Change: Kent Beck</a></p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/42">
+<h1>Muchas gracias por escuchar</h1>
+
+<p>@gastonramos</p>
+
+<p><a href="http://gastonramos.com.ar">http://gastonramos.com.ar</a></p>
+</div>
+</div></div>
+<div id="pauseScreen">
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* Upgraded 16dec2004  +chris+  */
+/* Fixed 12feb2005  +chris+  */
+/* Linko 25jun2005  +chris+  */
+
+body, table, form {
+  font: 9.5pt/1.33 Verdana, sans-serif;
+  margin: 2;
+  padding: 0;
+  text-align: center;
+}
+
+form {
+  text-align: left;
+}
+
+form#search {
+  padding: 0.5em 0 0 0;
+}
+
+div.main, div#main {
+  text-align: left;
+  width: 75em;
+  margin: 0em auto;
+}
+
+img {
+  border: none;
+}
+
+a { text-decoration: none; }
+
+a:link {
+   text-decoration: none;
+   color: blue;
+   padding: 3px 0px 2px 0px;
+   background-color: inherit;
+}
+
+a:visited {
+   padding: 3px 0px 2px 0px;
+   background-color: inherit;
+   color: blue;
+}
+
+a:hover {
+   color: blue;
+   text-decoration: underline;
+   border-color: #606870;
+}
+
+#header {
+   padding: 0.25em 0.5em;
+   border-bottom: 1px solid blue;
+   border-top: 1px solid blue;
+}
+
+h1 {
+  text-align: left;
+  font-size: 180%;
+  margin: 0px;
+}
+
+#header h2 {
+  text-align: right;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 10px;
+  position: relative;
+  top: -1.4em;
+  float: right;
+}
+
+#header a { color: #000;  }
+
+#breadcumbs {
+  padding: 0.3em;
+  background-color: #eee;
+}
+
+#sidebar {
+  width: 15em;
+  float: left;
+  border-right: 2px solid #000;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding: 0.5em;
+  background-color: #fff;
+}
+
+#sidebar h2 {
+  margin-top: 1em;
+  clear: both;
+  background-color: #fff;
+  padding-left: 5px;
+  border: 1px solid #000;
+  font-size: 15px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+#sidebar li {
+  margin-bottom: 0.5em;
+}
+
+#topictree a, #breadcumbs a, #sidebar a {
+  text-decoration: none;
+}
+
+#topictree a:hover, #breadcumbs a:hover, #sidebar a:hover {
+  text-decoration: underline;
+}
+
+#topictree dd {
+  margin-left: 3ex;
+}
+
+#topictree dl {
+  clear: left;
+  margin: 0; padding: 0;
+}
+
+#topictree {
+  padding-bottom: 2em;
+}
+
+#topictree dt {
+  clear: left;
+}
+
+#topictree dl.compact dt {
+  float: left;
+  clear: none;
+  margin-right: 0.5em;
+}
+
+#topictree ul {
+  padding: 0;
+  margin: 0;
+}
+
+#topictree li a {
+  padding-right: 0.25em;
+}
+
+#topictree li li {
+  padding: 0 0 0 1.33em;
+  margin: 0;
+}
+
+#recentlyplayed {
+  color: #0086EB;
+}
+
+#toc {
+  font-weight: bold;
+  letter-spacing: 0.2ex;
+}
+
+ul.blogroll li {
+  width: 50%;
+  float: left;
+}
+
+.description {
+  margin: 2em 0;
+  font-style: italic;
+}
+
+.content, #content {
+  width: 55em;
+  float: left;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+.content pre, #content pre {
+  background-color: #000;
+  padding: 0.5em;
+  color: #ccc;
+}
+
+.content code, #content code {
+  background-color: #ccc;
+  padding: 0.1em 0.2em;
+}
+
+.seperator {
+  text-align: center;
+}
+
+.seperator hr {
+  display: none;
+}
+
+.entry {
+  margin-bottom: 4em;
+}
+
+h3 {
+  padding: 0.2em 0;
+  font-size: 115%;
+}
+
+h4.date {
+  text-align: right;
+  position: relative;
+  top: -1.45em;
+  margin-bottom: -1.4em;
+}
+
+h4.date a {
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.commentlink {
+  font-size: 90%;
+  text-align: right;
+  padding: 0px 0.5em;
+  margin: 0;
+}
+
+.footer, #footer {
+  clear: both;
+  text-align: left;
+  margin: 0px;
+  padding: 0.25em 0.5em 1em;
+  border-top: 1px solid blue;
+  background-color: #eee;
+}
+
+sup a.linko {
+  font-size: 80%;
+}
+
+#nukumi2logo {
+  float: right;
+}
+
+#technorati p {
+  padding: 0;
+  margin: 0;
+}
+
+#technorati img {
+  position: relative;
+  top: 0.45em;
+}
+
+q {
+  font-style: italic;
+  font-size: 110%;
+}
+
+q:before { content: "\00AB"; }
+q:after { content: "\00BB"; }
+
+#atom, #rss {
+  border: 1px solid;
+  border-color: #FC9 #630 #330 #F96;
+  padding: 0px 3px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  background: #F60;
+  text-decoration: none;
+  margin: 5px 0px 0px 10px;
+  float: right;
+}
