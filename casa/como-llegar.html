@@ -1,17 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
 
-    <title>Como llegar a mi casa</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title>Gastón Ramos</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="../css/layouts/side-menu.css">
+  <!--<![endif]-->
 </head>
 
 <body>
 
-<h2>Como llegar a mi casa</h2>
+<div class="layout">
+<div id="main">
+
+  <div class="content">
+
+<div class="header">
+  <h1>Como llegar a mi casa</h1>
+</div>
+
 <p>Mi casa queda en Arroyo Leyes, Ruta 1 km 12,5 hay que doblar hacia el este por la calle nro 38 <br/>
 dónde hay una virgen en la esquina, sobre la cuadra de la comuna, luego
-hay que hacer <br/> 
+hay que hacer <br/>
 más o menos 1000 mts hacia el este como indica la imágen.<p>
 
 <img src="img/mapa-de-casa.png" alt="" />
@@ -28,7 +47,24 @@ parado desde el este, uds vienen desde el oeste (la ruta) así <br/>
 que la van a ver desde el patio,<br/>
 van a ver la galería que tiene unas ventanas con arcadas.</p>
 
-
-
 <img src="img/casa.jpg" />
-</bosy>
+
+</div>
+
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="http://gastonramos.wordpress.com">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
