@@ -1,118 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
 
-    <title>Gast&oacute;n Ramos - Web developer - ruby on rails - php - mysql -
-        postgresql</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <meta http-equiv="imagetoolbar" content="no" />
-        <link href="../public/css/kic-stylesheet.css" rel="stylesheet" type="text/css" />
+  <title>Gastón Ramos</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="../css/layouts/side-menu.css">
+  <!--<![endif]-->
 </head>
 
 <body>
-        <div id="container">
-        <div id="header">
-            <h1 title="Gast&oacute;n Ramos ">Gast&oacute;n Ramos </h1>
-	    <h2 title="Gast&oacute;n Ramos ">Software Engineer </h2>            
-        </div>
 
-        <div id="menu">
-          <a href="http://gastonramos.com.ar/">Home </a> |
-          <a href="http://gastonramos.com.ar/portfolio">Portfolio</a> |
-          <a href="http://gastonramos.com.ar/talks">Talks</a> |
-          <a href="http://gastonramos.wordpress.com/">My blog about Ruby</a>
-        </div>
+<div class="layout">
+<div id="main">
 
-    <div id="content">
+  <div class="content">
 
 
    <!--  ############################################################################################## -->
+       <div class="header">
+	 <h1 title="Talks">Talks I gave</h1>
+       </div>
 
-       <h2 title="Talks">[ Talks I gave ]</h2>
-       <ul>
+	<ul>
 	 <li>
-             <a href="http://www.gastonramos.com.ar/talks/truchar-y-triangular/">Rubylit meetup 2014</a><br/>
-             <strong>"Truchar y triangular"</strong>
-         </li>
-
-	 <li>
-             <a href="http://www.gastonramos.com.ar/talks/xp/">Rubylit Meetup 2013</a><br/>
-             <strong>"XP"</strong>
-         </li>
+	   Truchar y triangular |
+	   <a href="http://www.gastonramos.com.ar/talks/truchar-y-triangular/">Rubylit meetup 2014</a>
+	 </li>
 
 	 <li>
-             <a href="http://www.gastonramos.com.ar/talks/como-viajar-en-el-tiempo-con-mucho-menos-que-un-delorean/img0.html">Flisol Santa Fe 2013</a><br/>
-             <strong>"Como viajar en el tiempo con mucho menos que un delorean"</strong>
-         </li>
+	     XP | <a href="http://www.gastonramos.com.ar/talks/xp/">Rubylit Meetup 2013</a>
+	 </li>
 
-         <li>
-             <a href="http://www.gastonramos.com.ar/talks/de-cero-a-ruby/img0.html">Rubyconf Argentina 2012</a><br/>
-             <strong>"De cero a Ruby"</strong>
-         </li>
+	 <li>
+	   Como viajar en el tiempo con mucho menos que un delorean |
+	   <a href="http://www.gastonramos.com.ar/talks/como-viajar-en-el-tiempo-con-mucho-menos-que-un-delorean/img0.html">Flisol Santa Fe 2013</a>
+	 </li>
 
-         <li>
-             <a href="http://eventioz.com/events/actsasrubylit-2010/">Acts As Rubylit 2010</a><br/>
-             <strong>"Ruby para todos"</strong>
-         </li>
+	 <li>
+	     De cero a Ruby | <a href="http://www.gastonramos.com.ar/talks/de-cero-a-ruby/img0.html">Rubyconf Argentina 2012</a>
+	 </li>
 
-         <li>
-             <a href="http://www.rubylit.com.ar/wiki/show/acts_as_rubylit">Acts As Rubylit 2009</a><br/>
-             <strong>"Ruby un lenguaje simple natural y productivo"</strong>
-         </li>
+	 <li>
+	   Ruby para todos | <a href="http://eventioz.com/events/actsasrubylit-2010/">Acts As Rubylit 2010</a><br/>
 
-         <li>
-             <a href="http://www.lugparana.com.ar/content/lugparanaconf-cronograma-de-charlas">LugParan� conference 2008 </a><br/>
-             <strong>"Active Record Sabor Ruby"</strong>
-         </li>
+	 </li>
+	 <li>
+	   Ruby un lenguaje simple natural y productivo | <a href="http://www.rubylit.com.ar/wiki/show/acts_as_rubylit">Acts As Rubylit 2009</a><br/>
 
-         <li>
-             <a href="http://jornadas.cafelug.org.ar/8/programa/modules/myconference/program.php">Jornadas Regionales conference 2008 </a><br/>
-             <strong>"Active Record Sabor Ruby"</strong>
-         </li>
+	 </li>
 
-         <li>
-           <a href="http://www.cafeconf.org/2007/modules/myconference/viewspeech.php?sid=83&cid=1">CafeLug conference 2007 </a><br/>
-           <strong>"Agile web development on rails"</strong>
-         </li>
+	 <li>
+	   Active Record Sabor Ruby | <a href="http://www.lugparana.com.ar/content/lugparanaconf-cronograma-de-charlas">LugParaná conference 2008 </a> | <a href="http://jornadas.cafelug.org.ar/8/programa/modules/myconference/program.php">Jornadas Regionales conference 2008 </a>
 
-         <li>
-           <a href="http://www.saltalug.org.ar/?q=ii-jornadas-de-sl-en-salta">Salta Lug's GNU confenrence 2007</a><br/>
-           <strong>"Agile web development on rails"</strong>
-         </li>
+	 </li>
 
-          <li>
-           <a href="http://www.lugoroverde.com.ar">Salta Lug's GNU confenrence 2007</a><br/>
-           <strong>"Agile web development on rails"</strong>
-         </li>
+	 <li>
+	   Agile web development on rails | <a href="http://www.cafeconf.org/2007/modules/myconference/viewspeech.php?sid=83&cid=1">CafeLug conference 2007 </a> | <a href="http://www.saltalug.org.ar/?q=ii-jornadas-de-sl-en-salta">Salta Lug's GNU confenrence 2007</a> | <a href="http://www.lugoroverde.com.ar">Lug oro verde 2007</a>
+
+	 </li>
        </ul>
 
-   <!--  ############################################################################################## -->
-   <p></p>
-            <div id="footer">
-                <a href="http://validator.w3.org/check/referer" title="Validates as XHTML 1.1">XHTML</a> |
-                <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2"
-                   title="Validates as CSS">CSS</a><br/>
-
-
-                Design by <a href="http://www.growldesign.co.uk">growldesign</a>
-            </div>
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/work">Portfolio</a></li>
+	<li><a href="http://gastonramos.wordpress.com">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+      </ul>
     </div>
+  </div>
 
-<!-- Google analytics -->
-
-        <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3456076-2");
-pageTracker._trackPageview();
-</script>
-
-<!-- End Google analytics -->
+</div>
+</div>
 
 </body>
 </html>
