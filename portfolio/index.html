@@ -1,303 +1,274 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
 
-    <title>Gast&oacute;n Ramos - Web developer - ruby on rails - php - mysql -
-        postgresql</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <meta http-equiv="imagetoolbar" content="no" />
-        <link href="../public/css/kic-stylesheet.css" rel="stylesheet" type="text/css" />
+  <title>Gastón Ramos</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="../css/layouts/side-menu.css">
+  <!--<![endif]-->
 </head>
 
 <body>
-        <div id="container">
-        <div id="header" >
-            <h1 title="Gast&oacute;n Ramos">Gast&oacute;n Ramos</h1>
-	    <h2 title="Gast&oacute;n Ramos ">Software Engineer </h2>
-        </div>
 
-        <div id="menu">
-          <a href="http://gastonramos.com.ar/">Home </a> |
-          <a href="http://gastonramos.com.ar/portfolio">Portfolio</a> |
-          <a href="http://gastonramos.com.ar/talks">Talks</a> |
-          <a href="http://gastonramos.wordpress.com/">My blog about Ruby</a>
-        </div>
+<div class="layout">
+<div id="main">
 
-        <div id="content">
-            <blockquote><p><b>My portfolio. Some of projects wich I was involved.
-            </b></p></blockquote>
+  <div class="content">
+    <div class="header">
+      <h1 title="Experience">Portfolio</h1>
+      <h2 title="Experience">Gastón Ramos - Just another person.</h2>
+    </div>
 
-   <!--  ############################################################################################## -->
-
-         <h2 title="Experience">[ Recent projects ]</h2>
-
+    <p> The following are some projects which I was involved, most of them were built using
+    ruby and web techmologies.</p>
 
 <!--  ############################################################################################## -->
 
-         <div class="project">
-	    <div class='photo-set'>  
-            <div class='photo'><a href="../public/img/smrttouch.com/smrttouch-1.png" target="_blank">
-              <img width="100" height="100" alt="Screenshot"
-                               src="../public/img/smrttouch.com/smrttouch-1-thumb.png"/></a>
-             </div>
-	    
-	    <div class='photo'><a href="../public/img/smrttouch.com/smrttouch-2.png" target="_blank">
-              <img width="100" height="100" alt="Screenshot"
-                               src="../public/img/smrttouch.com/smrttouch-2-thumb.png"/></a>
-             </div>
-	    
-	    <div class='photo'><a href="../public/img/smrttouch.com/smrttouch-3.png" target="_blank">
-              <img width="100" height="100" alt="Screenshot"
-                               src="../public/img/smrttouch.com/smrttouch-3-thumb.png"/></a>
-             </div>
-	    </div>
+	 <div class="project">
+	     <h2 class="content-subhead" title="SmartTouch">SmartTouch</h2>
 
-            <h3 id="examples" title="SmartTouch">SmartTouch</h3>
+	   <p> I started working on <a href="http://smrttouch.com">SmrtTouch</a> from the
+	     begining of the project, SmrtTouch is a tool that allow users drawing routing
+	     calls with a friendly UI and diagrams, is made using technologies like Rails 3, Backbone.js,
+	     Jquery and Html 5.
+	   </p>
 
-              <p> I started working on <a href="http://smrttouch.com">SmrtTouch</a> from the begining of the project, 
-                  SmrtTouch is a tool that allow users drawing routing calls with a friendly
-                  UI and diagrams, is made using technologies like Rails 3, Backbone.js,
-                  Jquery and Html 5.</p>
-              
-         </div>
+	   <img width="150" height="150" alt="Screenshot"
+		src="../public/img/smrttouch.com/smrttouch-1-thumb.png"/></a>
 
-   <!--  ############################################################################################## -->
+	   <img width="150" height="150" alt="Screenshot"
+		src="../public/img/smrttouch.com/smrttouch-2-thumb.png"/></a>
+
+	   <img width="150" height="150" alt="Screenshot"
+		src="../public/img/smrttouch.com/smrttouch-3-thumb.png"/></a>
+	</div>
 
 <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="Simulscribe">Simulscribe</h3>
-
-              <p><a href="http://phonetag.com">PhoneTag</a> automatically converts your voicemail into 
-                 text and delivers it directly to your mobile phone and/or your email account; so you can read your voicemail.
-                 I worked doing the transcription's workflow process using technologies 
-                 like Rails 2, Mongo Db, Amazon EC2 and Delayed Job.</p>
-         </div>
-
-<!--  ############################################################################################## -->
+	 <div class="project">
+	   <h2 class="content-subhead">Simulscribe</h2>
+	    <p><a href="http://phonetag.com">PhoneTag</a> automatically converts your
+	      voicemail into text and delivers it directly to your mobile phone and/or
+	      your email account; so you can read your voicemail. I worked doing the
+	      transcription's workflow process using technologies like Rails 2, Mongo Db,
+	      Amazon EC2 and Delayed Job.
+	    </p>
+	 </div>
 
  <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="RmbrMe">Assembla.com</h3>
+	 <div class="project">
+	    <h2 class="content-subhead">Assembla.com</h2>
 
-              <p> <a href="http://www.assembla.com">Assembla.com</a> I worked in assembla improving the whole site and adding some new features, i did the <b>multiple server deploy</b>, added <b>sftp protocol support</b> and <b>git repo support</b> for the <a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/10093/July-27th-updates-New-FTP-publishing-tool-for-Web-developers-videos.aspx">ftp tool</a>.
+	    <p> <a href="http://www.assembla.com">Assembla.com</a> I worked in
+	      assembla improving the whole site and adding some new features, i did
+	      the <b>multiple server deploy</b>, added <b>sftp protocol support</b>
+	      and <b>git repo support</b> for the <a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/10093/July-27th-updates-New-FTP-publishing-tool-for-Web-developers-videos.aspx">ftp tool</a>.
 
-               <li><b>Technology</b>: Ruby on Rails 2.3 - TestUnit - Capistrano - Git.</li>
-               <li> You can see <a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/10467/Sept-28th-release-a-stronger-FTP-Tool.aspx">this post</a> with a video that show the tool.</li>
-             </ul>
-             </p>
-         </div>
+
+	       <li><b>Technology</b>: Ruby on Rails 2.3 - TestUnit - Capistrano - Git.</li>
+	       <li> You can see <a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/10467/Sept-28th-release-a-stronger-FTP-Tool.aspx">this post</a> with a video that show the tool.</li>
+	     </ul>
+	     </p>
+	 </div>
 
    <!--  ############################################################################################## -->
 
 
  <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="RmbrMe">Rmbrme.com</h3>
+	 <div class="project">
+	    <h2 class="content-subhead" title="RmbrMe">Rmbrme.com</h2>
 
-              <p> <a href="http://www.rmbrme.com"> RmbrMe.com</a> Is a web application for <b>sharing contact information</b> from your mobile phone, i worked as a contractor in order to add some new functionality and improve the existing code. I built the integration with <b >Twitter</b>, the new subscription system. I did the migration to rails 2.3 and <b>cucumber</b>. We launched beamME Pro 3.0.
+	      <p> <a href="http://www.rmbrme.com"> RmbrMe.com</a> Is a web application for <b>sharing contact information</b> from your mobile phone, i worked as a contractor in order to add some new functionality and improve the existing code. I built the integration with <b >Twitter</b>, the new subscription system. I did the migration to rails 2.3 and <b>cucumber</b>. We launched beamME Pro 3.0.
 
-               <li><b>Technology</b>: Ruby on Rails 2.3 - Cucumber - Rspec - Capistrano.</li>
-               <li><a href="http://rmbrme.com/twitter">http://rmbrme.com/twitter</a></li>
-               <li>You can see <a href="http://appadvice.com/appnn/2009/05/rmbrme-adds-twitter-support-to-all-apps-releases-beamme-pitch/">this post</a>
-             </ul>
-             </p>
-         </div>
-
-   <!--  ############################################################################################## -->
-
-         <div class="project">
-            <h3 id="examples" title="ChunkyCode">IfansBlog & App Installer for Passenger</h3>
-
-             <p>I have modified Big Blue Pass Fan Blog to be a new <b>generic fan blog system</b>, now it's possible
-              to install ifansblog and setup any Sport Team.
-
-             <p>I have developed a <b>ruby script to install and deploy</b> a new Ifansblog site,
-               on Apache server using
-               <a href="http://www.modrails.com/">Passenger (Mod_Rails)</a> and
-               <a href="http://www.rubyenterpriseedition.com/">Ruby Enterprise
-                Edition</a> with a simple user interface, to install.</p>
-             <ul>
-
-               <li><b>Technology</b>: Ruby on Rails 2.1.1 - Passenger - Ruby EE - Apache.</li>
-
-             </ul>
-             See <a href="http://gastonramos.wordpress.com/2009/02/03/red-de-blogs-de-la-nfl-en-rails-muy-pronto/">this post</a> with more details (in spanish):
-
-             </p>
-         </div>
+	       <li><b>Technology</b>: Ruby on Rails 2.3 - Cucumber - Rspec - Capistrano.</li>
+	       <li><a href="http://rmbrme.com/twitter">http://rmbrme.com/twitter</a></li>
+	       <li>You can see <a href="http://appadvice.com/appnn/2009/05/rmbrme-adds-twitter-support-to-all-apps-releases-beamme-pitch/">this post</a>
+	     </ul>
+	     </p>
+	 </div>
 
    <!--  ############################################################################################## -->
 
+	 <div class="project">
+	    <h2 class="content-subhead" title="ChunkyCode">IfansBlog & App Installer for Passenger</h2>
+
+	     <p>I have modified Big Blue Pass Fan Blog to be a new <b>generic fan blog system</b>, now it's possible
+	      to install ifansblog and setup any Sport Team.
+
+	     <p>I have developed a <b>ruby script to install and deploy</b> a new Ifansblog site,
+	       on Apache server using
+	       <a href="http://www.modrails.com/">Passenger (Mod_Rails)</a> and
+	       <a href="http://www.rubyenterpriseedition.com/">Ruby Enterprise
+		Edition</a> with a simple user interface, to install.</p>
+	     <ul>
+
+	       <li><b>Technology</b>: Ruby on Rails 2.1.1 - Passenger - Ruby EE - Apache.</li>
+
+	     </ul>
+	     See <a href="http://gastonramos.wordpress.com/2009/02/03/red-de-blogs-de-la-nfl-en-rails-muy-pronto/">this post</a> with more details (in spanish):
+
+	     </p>
+	 </div>
+
    <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="ChunkyCode">Big Blue Pass Fan Blog</h3>
+	 <div class="project">
+	    <h2 class="content-subhead">Big Blue Pass Fan Blog</h2>
 
-             <p><b>Big Blue Pass</b>
-             <a href="http://www.bigbluepass.com/" target="_blank">(http://www.bigbluepass.com/)</a>
-              Is a Giant's Fan blog, users can post articles about the team and comments them,
-              they can track Giant's NFL games and read news from a feed list. Users can publish your personal profile
-              if they wish. There is a backend to manage users accounts and page content.
+	     <p><b>Big Blue Pass</b>
+	     <a href="http://www.bigbluepass.com/" target="_blank">(http://www.bigbluepass.com/)</a>
+	      Is a Giant's Fan blog, users can post articles about the team and comments them,
+	      they can track Giant's NFL games and read news from a feed list. Users can publish your personal profile
+	      if they wish. There is a backend to manage users accounts and page content. </p>
 
-             <div class='photo'><a href="../public/img/bigbluepass.com/backend-admin2.jpg" target="_blank">
-              <img width="100" height="100" alt="Screenshot"
-                               src="../public/img/bigbluepass.com/backend-admin2-thumb.jpg"/></a>
-             </div>
+	     <a href="../public/img/bigbluepass.com/backend-admin2.jpg" target="_blank">
+	      <img width="150" height="150" alt="Screenshot"
+			       src="../public/img/bigbluepass.com/backend-admin2-thumb.jpg"/></a>
 
-             <div class='photo'><a href="../public/img/bigbluepass.com/home2.jpg" target="_blank">
-               <img width="100" height="100" alt="Screenshot"
-                    src="../public/img/bigbluepass.com/home2-thumb.jpg"/></a>
-             </div>
+	     <a href="../public/img/bigbluepass.com/home2.jpg" target="_blank">
+	       <img width="150" height="150" alt="Screenshot"
+		    src="../public/img/bigbluepass.com/home2-thumb.jpg"/></a>
 
-             <div class='photo'><a href="../public/img/bigbluepass.com/backend-admin.jpg" target="_blank">
-               <img width="100" height="100" alt="Screenshot"
-                                src="../public/img/bigbluepass.com/backend-admin-thumb.jpg"/></a>
-             </div>
+	     <a href="../public/img/bigbluepass.com/backend-admin.jpg" target="_blank">
+	       <img width="150" height="150" alt="Screenshot"
+				src="../public/img/bigbluepass.com/backend-admin-thumb.jpg"/></a>
 
-             <div class='photo'><a href="../public/img/bigbluepass.com/home.jpg" target="_blank">
-               <img width="100" height="100" alt="Screenshot"
-                    src="../public/img/bigbluepass.com/home-thumb.jpg"/></a>
-             </div>
+	     <a href="../public/img/bigbluepass.com/home.jpg" target="_blank">
+	       <img width="150" height="150" alt="Screenshot"
+		    src="../public/img/bigbluepass.com/home-thumb.jpg"/></a>
 
 
-             <ul>
-               <li><b>Technology</b>: Ruby on Rails 2.1.1 - BDD (Rspec).</li>
-               <li><b>Used Plugins:</b> restful_authentication, acts_as_state_machine, attachment_fu,
-                   easy-fckeditor, meteor_strike, permalink_fu,  rspec, rspec-rails,
-                   timed_fragment_cache, will_paginate.</li>
-             </ul>
-             </p>
-         </div>
+	     <ul>
+	       <li><b>Technology</b>: Ruby on Rails 2.1.1 - BDD (Rspec).</li>
+	       <li><b>Used Plugins:</b> restful_authentication, acts_as_state_machine, attachment_fu,
+		   easy-fckeditor, meteor_strike, permalink_fu,  rspec, rspec-rails,
+		   timed_fragment_cache, will_paginate.</li>
+	     </ul>
+	     </p>
+	 </div>
 
    <!--  ############################################################################################## -->
 
    <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="ChunkyCode">ChunkyCode</h3>
+	 <div class="project">
+	    <h2 class="content-subhead">ChunkyCode</h2>
 
-             <div class='photo'><a href="http://code.mogok.com.ar" target="_blank">
-             <img width="100" height="100" alt="Screenshot" src="../public/img/chunkycode.png"/></a>
-             </div>
-             <p/><b>Chunky Code</b>
-             <a href="http://code.mogok.com.ar" target="_blank">(http://code.mogok.com.ar)</a>
-             Is a social blogging system thats allows to users posting chunks of code,
-             is made focusing on source code and makes easy the edition through Markdown technology.
+	     <p/><b>Chunky Code</b>
+	     <a href="http://code.mogok.com.ar" target="_blank">(http://code.mogok.com.ar)</a>
+	     Is a social blogging system thats allows to users posting chunks of code,
+	     is made focusing on source code and makes easy the edition through Markdown technology.
 
-             <a href="http://gastonramos.com.ar/chunkycode-doc/">See Documentation (In Sapnish)</a><br/><br/>
+	     <a href="http://gastonramos.com.ar/chunkycode-doc/">See Documentation (In Sapnish)</a><br/><br/>
 
-             <ul>
-               <li><b>Technology</b>: Ruby on Rails 2.0.2 - REST - BDD (Rspec).</li>
-               <li><b>Used Plugins:</b> acts_as_ferret, acts_as_state_machine, restful_authentication,
-                acts_as_taggable_on_steroids, geokit, ym4r_gm, gravatar, rspec, rspec_on_rails,
-                will_paginate, railroad </li>
-               <li>Google Maps Api.</li>
-             </ul>
+	     <a href="http://code.mogok.com.ar" target="_blank">
+	       <img width="150" height="150" alt="Screenshot" src="../public/img/chunkycode.png"/></a>
 
-         </div>
+	       <ul>
+	       <li><b>Technology</b>: Ruby on Rails 2.0.2 - REST - BDD (Rspec).</li>
+	       <li><b>Used Plugins:</b> acts_as_ferret, acts_as_state_machine, restful_authentication,
+		acts_as_taggable_on_steroids, geokit, ym4r_gm, gravatar, rspec, rspec_on_rails,
+		will_paginate, railroad </li>
+	       <li>Google Maps Api.</li>
+	     </ul>
 
-   <!--  ############################################################################################## -->
-
-         <div class="project">
-            <h3 id="examples" title="RDental">Rdental</h3>
-
-             <div class='photo'><a href="../public/img/rdental-odontogram2.png" target="_blank">
-             <img width="100" height="100" alt="Screenshot" src="../public/img/rdental-odontogram2-thumb.png"/></a>
-             </div>
-             <p/><b>Rdental</b> is a web application for odontograms management. It allows
-                               to handle patients electronic health records (EHR) and add odontograms
-                               pictures to it on demand.
-             <a href="../public/screencast/rdental-screencast.ogg">download screencast demo</a><br/><br/>
-
-             <ul>
-               <li><b>Technology</b>: Ruby on Rails - RMagic - ImageTooth - Rspec .</li>
-               <li>Odontograms history.</li>
-               <li>A simple interface for edit an update odontograms.</li>
-               <li>Upload patiens pictures. </li>
-             </ul>
-
-         </div>
+	 </div>
 
    <!--  ############################################################################################## -->
 
-         <div class="project">
-            <h3 id="examples" title="ImageTooth Library">ImageTooth ruby library</h3>
-            <p><a href="http://imagetooth.rubyforge.org/" >ImageTooth</a>
-                ImageTooth is a library that provides programmers and users a simple way
-                to generate images for odontograms. IT allows to choose between png or jpg images..</p>
-             <ul>
-               <li><b>Technology</b>: Ruby - RMagic - Rspec - RubyGem.</li>
-               <li>Tooth image generation.</li>
-               <li>Simple script that allows you to create the teeth images directly.</li>
-               <li>A simple interface for painting teeth faces. </li>
-               <li>All permutations generating.</li>
-             </ul>
-         </div>
+	 <div class="project">
+	    <h2 class="content-subhead" title="RDental">Rdental</h2>
+
+	     <div class='photo'><a href="../public/img/rdental-odontogram2.png" target="_blank">
+	     <img width="150" height="150" alt="Screenshot" src="../public/img/rdental-odontogram2-thumb.png"/></a>
+	     </div>
+	     <p/><b>Rdental</b> is a web application for odontograms management. It allows
+			       to handle patients electronic health records (EHR) and add odontograms
+			       pictures to it on demand.
+	     <a href="../public/screencast/rdental-screencast.ogg">download screencast demo</a><br/><br/>
+
+	     <ul>
+	       <li><b>Technology</b>: Ruby on Rails - RMagic - ImageTooth - Rspec .</li>
+	       <li>Odontograms history.</li>
+	       <li>A simple interface for edit an update odontograms.</li>
+	       <li>Upload patiens pictures. </li>
+	     </ul>
+
+	 </div>
+
+   <!--  ############################################################################################## -->
+
+	 <div class="project">
+	    <h2 class="content-subhead">ImageTooth ruby library</h2>
+	    <p><a href="http://imagetooth.rubyforge.org/" >ImageTooth</a>
+		ImageTooth is a library that provides programmers and users a simple way
+		to generate images for odontograms. IT allows to choose between png or jpg images..</p>
+	     <ul>
+	       <li><b>Technology</b>: Ruby - RMagic - Rspec - RubyGem.</li>
+	       <li>Tooth image generation.</li>
+	       <li>Simple script that allows you to create the teeth images directly.</li>
+	       <li>A simple interface for painting teeth faces. </li>
+	       <li>All permutations generating.</li>
+	     </ul>
+	 </div>
 
     <!--  ############################################################################################## -->
 
-        <div class="project">
-            <h3 id="code" title="Terra sms alert backend">Terra sms alert backend</h3>
-            <p>
-                <a href="http://www.terra.com.ar/paginas/sms2/mundial">Terra sms alert backend</a>
-                  is an <acronym title="Short Message Service" >SMS</acronym> alert system,
-                  where they users have suscript via <acronym title="Short Message Service">SMS</acronym>
-                  and they receive alerts on their mobiles.
-              <ul>
-                <li><b>Technology</b>: PHP - SimpleTest - Oracle. </li>
-                <li>Instants messages.</li>
-                <li>Daily messages.</li>
-             </ul>
-        </div>
+	<div class="project">
+	    <h2 class="content-subhead" title="Terra sms alert backend">Terra sms alert backend</h2>
+	    <p>
+		<a href="http://www.terra.com.ar/paginas/sms2/mundial">Terra sms alert backend</a>
+		  is an <acronym title="Short Message Service" >SMS</acronym> alert system,
+		  where they users have suscript via <acronym title="Short Message Service">SMS</acronym>
+		  and they receive alerts on their mobiles.
+	      <ul>
+		<li><b>Technology</b>: PHP - SimpleTest - Oracle. </li>
+		<li>Instants messages.</li>
+		<li>Daily messages.</li>
+	     </ul>
+	</div>
 
     <!--  ############################################################################################## -->
 
-        <div class="project">
-          <h3 id="examples" title="Bippie backoffice">Bippie CMS backoffice</h3>
-            <p><a href="http://ar.bippie.com" >Bippie</a>
-                  CMS backoffice is a web-based Content management system for mobile contents.</p>
-                <ul>
-                  <li><b>Technology</b>: Php - Perl - Mysql.</li>
-                  <li>Wallpapers - Polyphonic ringtones - Monophonic ringtones - Video - Mp3.</li>
-                    <li>Content download ranking.</li>
-                    <li>Partners management interface.</li>
-                    <li>Backend interface.</li>
-                </ul>
-         </div>
+	<div class="project">
+	  <h2 class="content-subhead" title="Bippie backoffice">Bippie CMS backoffice</h2>
+	    <p><a href="http://ar.bippie.com" >Bippie</a>
+		  CMS backoffice is a web-based Content management system for mobile contents.</p>
+		<ul>
+		  <li><b>Technology</b>: Php - Perl - Mysql.</li>
+		  <li>Wallpapers - Polyphonic ringtones - Monophonic ringtones - Video - Mp3.</li>
+		    <li>Content download ranking.</li>
+		    <li>Partners management interface.</li>
+		    <li>Backend interface.</li>
+		</ul>
+	 </div>
 
+	  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/work">Portfolio</a></li>
+	<li><a href="http://gastonramos.wordpress.com">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+      </ul>
+    </div>
+  </div>
 
-        <h2 id="contact" title="Contact">[ Contact ]</h2>
-            <p>If you think your company needs looking to outsource, don't
-               hesitate to send an email to <b> {ramos} dot {gaston} at {gmail} dot
-                {com}</b>.</p>
+</div>
+</div>
 
-                </div>
-            <div id="footer">
-                <a href="http://validator.w3.org/check/referer" title="Validates as XHTML 1.1">XHTML</a> |
-                <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Validates as CSS">CSS</a><br/>
-
-
-                Design by <a href="http://www.growldesign.co.uk">growldesign</a>
-            </div>
-        </div>
-<!-- Google analytics -->
-
-        <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3456076-2");
-pageTracker._trackPageview();
-</script>
-
-<!-- End Google analytics -->
-
-        </body>
+</body>
 </html>

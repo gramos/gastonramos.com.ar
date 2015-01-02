@@ -15,5 +15,19 @@
 </head>
 
 <body>
+  <div class="header">
+    <h2>[ Gastón Ramos - Software Engineer ]</h2>
+  </div>
+  <div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/music">Music</a></li>
+      <li><a href="/work">Poftfolio</a></li>
+      <li><a href="http://gastonramos.wordpress.com">Blog</a></li>
+      <li><a href="/translations">Translations</a></li>
+      <li><a href="/talks">Talks</a></li>
+      <li><a href="/radio">Radio</a></li>
+    </ul>
+  </div>
 
 </body>
