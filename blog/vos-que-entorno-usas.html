@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gastón Ramos | Software Engineer">
+
+  <title>¿Vos qué entorno usás? | Blog | Gastón Ramos</title>
+  <link rel="stylesheet" href="https://gramos.dev/css/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu.css">
+  <!--<![endif]-->
+</head>
+
+<body>
+
+<div class="layout">
+<div id="main">
+
+  <div class="content">
+    <div class="header">
+      <h1>Gastón Ramos</h1>
+      <h2>Blog personal</h2>
+    </div>
+   
+    <h2>¿Vos qué entorno usás?</h2>
+    <small>Escrito en una mañana, 31 de Mayo de 2024</small>
+    <p>
+      El mundo de la programación y el IT en general requiere de muchos conocimientos
+      que además cambian con el tiempo, muchas veces, muy rápido, es decir en pocas
+      palabras para poder ser un programador más o menos decente hay que saber muchas
+      cosas, sí, ¡muchas de verdad!. Por este motivo cuando uno empieza desde cero
+      probablemente sea muy difícil elegir qué cosas aprender primero, de todo
+      lo que hay que aprender <b>¿por dónde debo empezar?</b> Pués bien, obviamente
+      si queremos aprender a programar debemos empezar por aprender por el lenguaje
+      de programación, que para empezar yo recomiendo fuertemente <a href="https://www.ruby-lang.org/">Ruby</a> como primer
+      lenguaje, aunque hoy no quiero escribir de esto, hoy tengo ganas de escribir
+      acerca de algo que no veo mucho que en general se hable o se discuta mucho,
+      y esto es el entorno, <b>¿qué es para mí el entorno?</b> bueno para mí el entorno
+      de un programador está conformado por:
+      <i>La habitación dónde trabaja, la silla, el escritorio, después el teclado,
+      el monitor y la computadora, y por supuesto el Sistema operativo, el entorno
+      de ventanas y una de las cosas más importantes el editor o la ide.</i>
+    </p>
+    <img src="img/ruby-matrix.jpeg" />
+    <h3>El sistema operativo, el de un Hacker. GNU/Linux</h3>
+    <p>
+      Hablemos por ejemplo del sistema operativo, para mí, un buen hacker <b>debe</b>
+      usar Linux, por varios motivos, hay cosas escritas <a href="https://www.elhacker.net/breve-historia-de-la-cultura-hacker.html">al respecto </a>
+      pero podría decir acá que, el 90% de los servidores de internet son servidores Linux, y cuando tengas que subir tu programa
+      a producción, lo más probable es que sea desplegado en un entorno Linux, con lo cuál es bueno que el entorno que uses sea
+      lo más parecido al entorno de producción. Pero más allá de esto también podemos decir que técnicamente es muy bueno,
+      linux tiene una filosofía como esta: "los programas hace <b>UNA</b> sola cosa y la hacen bien, así por ejemplo tenemos
+      algunos comandos útiles, como <b>cat</b>, qué lo unico que hace es mostrar el contenido de un archivo, o <b>less</b> que hace lo mismo
+      pero con paginación, así también tenemos <b>grep</b> para buscar texto dentro de archivos, o <b>tr</b> para reemplazar (translate)
+      texto. Además por ejemplo el shell de linux nos permite hacer algo fantástico con estas herramientas pequeñas y son las tuberías
+      o pipes, pudiendo de esta manera enviar la salida de un comando a la entrada del siguiente, como por ejemplo:
+      <pre>
+        cat usuarios.txt | grep gaston | wc -l
+      </pre>
+      Este script cuenta cuantos usuarios tienen como nombre 'gaston', no voy a explicar como funciona, pero
+      se podrán dar cuenta del poder de este sistema de herramientas chiquitas que unidas puede hacer cosas muy
+      útiles.
+    </p>
+    <p>
+      Linux es un sistema libre, de ahí su nombre completo <b>GNU/Linux</b> con esto tenemos la seguridad
+      de que tenemos el 100% del control de lo que hacemos y somos 100% dueños de los programas
+      y los formatos que usamos. Hay muchas distribuciones o sabores de Linux, así que podés elegir
+      la que más te guste, en lo personal uso <a href="https://www.debian.org/">GNU/Linux Debian.</a>
+    </p>
+
+    <img src="img/gnu-linux.jpeg" />
+
+    <h3>El mouse es tu enemigo. Entorno de ventanas, Xmonad</h3>
+    <p>
+      El entorno de ventanas es algo también muy importante, por que nos determina cómo
+      vamos a interactuar con los programas que tenemos instalados en la computadora,
+      es el que nos presenta la información en la pantalla, y nos permite abir programas,
+      entre otras cosas.</p>
+    <p>
+      Un entorno de ventanas en <b>GNU/Linux</b> es por ejemplo <a href="https://www.gnome.org/">Gnome</a>, que es uno de los más populares,
+      obviamente tiene ventanas y las mismas se puede mover en el escritorio, minimizar, etc.
+      Además trae un escritorio, dónde puede haber íconos, etc. pero no es de lo que quiero
+      escribir hoy, Hoy quiero escribir y mostrar un poco el entorno que uso desde hace unos
+      años, se llama <a href="https://es.wikipedia.org/wiki/Xmonad">Xmonad</a> bueno lo que tiene de
+      "raro" Xmoand es que minpula
+      las ventanas ¡sin usar el mouse! seguramente se preguntaran, ¿para qué carajos quiero
+      esto? sencillo, usar el mouse es <b>lento</b> es mucho más lento usar el mouse que usar
+      el teclado (ya vamos a hablar de esto... el teclado). </p>
+      <p>Así es como yo uso Xmonad:
+      lo primero que hago es abrir la terminal, esto lo hago con la siguiente combinación de teclas:
+      <pre>CTL + Shift + RET</pre>después de esto ejecuto <pre>screen</pre> en la terminal
+      pero de esto vamos a hablar en otro artículo, bueno después de eso, generalmente abro
+      el browser para navegar en internet que por ahora uso firefox, entonces para esto
+      me muevo a otro espacio de trabajo, con la siguiente combinación de teclas:
+      <pre>ALT + 2</pre>y después abro el firefox <pre>ALT + p</pre>esto me muestra una barra superior
+      y entonces tipeo: 'fire' y xmonad me autocompleta el resto, presiono RET (enter) y se abre el firefox.
+      ¿Nótaron que hasta ahora no usé el mouse?
+      Bueno ahora voy a abrir otra terminal en otro espacio de trabajo para abrir el editor,
+      entonces<pre>ALT + 3</pre> eso me lleva al espacio de trabajo nro 3 y ahí abro una nueva terminal
+      <pre>CTL + Shift + RET</pre>y ejecuto <a href="https://www.gnu.org/software/emacs/">Emacs</a> (de esto también vamos a hablar más adelante), lo ejecuto
+      con un alias de shell que me hice así que sólamente escribo la letra 'e' en la terminal.
+      A partir de este momento ya puedo empezar a trabajar...
+      </p>
+      <p>
+        Acá les dejo un videito de que muestra lo explicado, como arranco mi sesión con Xmomand.
+      </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xYy0z96oBko?si=s53ZWBtpvXM3ChUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>
+      Continuará...
+    </p>
+    <p>
+      Nos leemos, <br/>
+     <b>Gastón Ramos</b>
+    </p>
+    
+  <br />
+  <pre> ::: Si querés comentar algo mandame un email: <b>ramos.gaston AT gmail.com</b> :::</pre>
+
+  </div>
+
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+	<li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
