@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gastón Ramos | Software Engineer">
+
+  <title>Seguridad en Ruby on Rails | Blog | Gastón Ramos</title>
+  <link rel="stylesheet" href="https://gramos.dev/css/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu.css">
+  <!--<![endif]-->
+</head>
+
+<body>
+
+<div class="layout">
+<div id="main">
+
+  <div class="content">
+    <div class="header">
+      <h1>Gastón Ramos</h1>
+      <h2>Blog personal</h2>
+    </div>
+   
+    <h2>Seguridad en Ruby on Rails</h2>
+    <small>Escrito en 4 pomodoros, una mañana, un 3 de Julio de 2024</small>
+<p>
+Voy a intentar escribir un poco acerca de este tema de la seguridad en Ruby on Rails,
+el tema seguridad en aplicaciones web es un tema <b>MUY</b> amplio y puede prestarse
+a confusiones, pero, siendo nosotros programadores, la pregunta del millón podríamos decir es:
+<b><i>¿cómo podemos asegurar que nuestra aplicación es segura?</i></b>
+de hecho <b><i>¿podemos asegurar que nuestra apliación es segura?</i></b>
+En mi opinión personal creo que la pregunta no es tan fácil de responder,
+por que al ser la seguridad un tema tan enorme, la realidad es que es
+muy díficil poder decir "Yo aseguro que esta aplicación es 100% segura"
+Yo por ejemplo tengo unos 20 años de experiencia desarrollando aplicaciones web,
+apis, etc. y la verdad es que siento que no sé mucho del tema, pero bueno,
+me permito cambiar esta pregunta un poco y reformularla de la siguiente
+manera: <b><i>¿Qué podemos hacer nosotros como programadores de Ruby on Rails,
+para reducir lo máximo posible los problemas de Seguridad?</i></b>
+</p>
+<img src="img/hackeando.png" height="50%" width="50%"/>
+<p>
+Pensando un poco nomás me doy cuenta que tengo qué detenerme a pensar
+en lo inmediato y luego en lo importante, y qué implica esto,
+por ejemplo se me vienen como 2 instancias a la cabeza o dos momentos
+del ciclo de vida de una app, la primera es cuando estamos desarrollando
+la app desde cero, o también cuando estamos desarrollando una nueva feature,
+en este momento creo que mientras hacemos el trabajo debemos tener en mente
+algunas, o mejor dicho, varias cosas a tener en cuenta y buena forma
+de aprender y empezar es leyendo la Documentación de Ruby on Rails
+al respecto, y esto lo podemos encontrar acá:
+</p>
+
+<a href="https://guides.rubyonrails.org/security.html">https://guides.rubyonrails.org/security.html</a>
+
+<p>
+Ahí hay bastante información y es un muy buen lugar para empezar,
+hay una lista de las vulnerabilidades más comunes en Rails y
+en aplicaciones Web. Ahora bien si yo tengo que hacer esa lista,
+digamos reducirla a 5, el top five para mí sería este:
+
+<ul>
+  <li>Sesion Hijaking (Secuestro de Sesión)</li>
+  <li>Cross-Site Request Forgery (CSRF, Falsificación de petición entre sitios cruzados)</li>
+  <li>SQL Injection</li>
+  <li>Command Line Injection</li>
+  <li>Cross-Site Scripting (XSS)</li>
+</ul>
+
+</p>
+
+<h3>Sesion Hijaking (Secuestro de Sesión)</h3>
+<p>
+  Muchas aplicaciones web tienen un sistema de autenticación:
+  el usuario proporciona su nombre de usuario y la contraseña
+  y la aplicación almacena el ID del usuario en la sesión en una cookie,
+  y partir de ahí todas las peticiones al server de la app
+  no necesitan autenticarse, por que el ID del usuario en la sesión
+  identifica la sesión.
+  Por lo tanto, la cookie sirve como autenticación temporal para la aplicación web.
+  <b>Cualquiera que se apodere de una cookie de otra persona,
+  puede utilizar la aplicación web como este usuario.</b>
+</p>
+
+<h3>Cross-Site Request Forgery (CSRF, Falsificación de petición entre sitios cruzados)</h3>
+<p>El atacante engaña al navegador del usuario para que envíe solicitudes HTTP maliciosas a un sitio
+  web en el que el usuario está autenticado.
+  Imagina que estás autenticado en tu cuenta bancaria en línea y un atacante te envía un correo
+  electrónico con un enlace malicioso. Al hacer clic en el enlace, el navegador envía una solicitud
+  a tu banco para transferir dinero a la cuenta del atacante. Como ya estás autenticado en tu cuenta bancaria,
+  el banco procesa la solicitud y transfiere el dinero sin que tú lo sepas.
+</p>
+<p>
+  <b>Rails soluciona este problema mediante el uso de un token CSRF, esto viene
+  configurado por defecto en las últimas versiones de Rails</b>
+  
+  <pre>
+    config.action_controller.default_protect_from_forgery = true
+  </pre>
+
+  También se puede agregar manualmente en el controller:
+
+  <pre>
+    protect_from_forgery with: :exception
+  </pre>
+</p>
+
+<h3>SQL Injection</h3>
+<p>Los ataques de inyección SQL tienen como objetivo influir en las consultas de bases
+  de datos mediante la manipulación de parámetros de aplicaciones web.
+  Un objetivo común de los ataques de inyección SQL es eludir la autorización.
+
+  <pre>
+    Project.where("name = '#{params[:name]}'")
+  </pre>
+
+  Esto podría ser una acción de búsqueda y el usuario puede ingresar el nombre de un
+  proyecto que desea encontrar. Si un usuario malintencionado ingresa "OR 1) --, la consulta SQL resultante será:
+
+  <pre>
+    SELECT * FROM projects WHERE (name = '' OR 1) --')
+  </pre>
+</p>
+<p>
+  Ruby on Rails tiene un filtro integrado para caracteres SQL especiales,
+  que evitará los caracteres ' , " , NULL y los saltos de línea.
+</p>
+<p>
+  <b>En lugar de pasar un string, puede usar positional handlers para sanitizar strings contaminadas de esta manera:</b>
+
+  <pre>
+    Model.where("zip_code = ? AND quantity >= ?", entered_zip_code, entered_quantity).first
+  </pre>
+</p>
+
+<h3>Command Line Injection</h3>
+<p>
+  Si su aplicación tiene que ejecutar comandos en el sistema operativo subyacente,
+  existen varios métodos en Ruby: <code>system(command), exec(command), spawn(command)</code>
+  y `command`. Deberá tener especial cuidado con estas funciones
+  si el usuario puede ingresar el comando completo o una parte del mismo.
+  <pre>
+    user_input = "hello; rm *"
+    system("/bin/echo #{user_input}")
+  </pre>
+  Notan el problema cierto?
+
+  Un forma de subsanar esto es usar <code>system(command, parameters)</code> pasandolé parámetros
+  
+  <pre>
+    system("/bin/echo", "hello; rm *")
+  </pre>
+
+  Entonces imprime "hello; rm *" y no borra los archivos.
+</p>
+
+<h3>Cross Site Scripting (XSS)</h3>
+<p>
+  Cross-Site Scripting (XSS) es una vulnerabilidad de seguridad que permite a un
+  atacante inyectar scripts maliciosos en páginas web vistas por otros usuarios.
+
+  Imagina una página de perfil de usuario donde los usuarios pueden publicar actualizaciones
+  de estado. Si la aplicación no escapa adecuadamente el contenido del estado, un atacante podría publicar un estado como:
+
+  <pre>
+    &lt;scrip&gt;alert('XSS!');&lt;/script&gt;
+  </pre>
+
+  Cuando otros usuarios visiten la página del perfil del atacante,
+  verán un cuadro de alerta con el mensaje "XSS!". En un escenario real,
+  el script malicioso podría robar cookies de sesión y enviarlas al servidor del atacante.
+
+  Una solución es utilizar una lista de tags permitidos con el método sanitize()
+  de esta forma:
+
+  <pre>
+    tags = %w(a acronym b strong i em li ul ol h1 h2 h3 h4 h5 h6 blockquote br cite sub sup ins p)
+    s = sanitize(user_input, tags: tags, attributes: %w(href title))
+  </pre>
+</p>
+<p>
+  Esto permite únicamente las etiquetas dadas y hace un buen trabajo,
+  incluso contra todo tipo de trucos y etiquetas malformadas.
+</p>
+<p>
+  Un segundo paso es utilizar el método html_escape() o su alias h()
+  para reemplazar los caracteres de entrada HTML &, ", < y > por sus representaciones
+  no interpretadas en HTML <code>(&amp;amp;, &amp;quot;, &amp;lt; y &amp;gt;)</code>.
+</p>
+<br />
+
+<h3>Paso 2</h3>
+<p>
+  Más arriba hablé de 2 instancias, y expliqué la primera, ahora la segunda es
+  el mantenimiento de una App en producción, por que no es nada más hacer algo
+  ponerlo en producción y después olvidarnos. Así como por ejemplo
+  nuestros vehículos necesitan mantenimiento, nuestras aplicaciones también,
+  necesitamos mantenernos informados de las últimas vulnerabilidades encontradas
+  y publicadas en Ruby, en Ruby on Rails, en las bibliotecas (Gemas) más importantes
+  que usamos y además necesitamos mantener el sistema operativo actualizado.
+  Si por ejemplo salen nuevas vulnerabilidades en alguna parte de la STD lib
+  de Ruby vamos a tener que actualizar la versión de ruby que soluciona ese
+  problema, y así.
+</p>
+<p>
+  Bueno este fué más o menos un resúmen de las 5 vulnerabilidades más comunes en la web,
+hay varias más, por ejemplo en la sección de seguridad de las guías de Rails.
+</p>
+
+<pre> ::: Si querés comentar algo mandame un email: <b>ramos.gaston AT gmail.com</b> :::</pre>
+  </div>
+
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+	<li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
