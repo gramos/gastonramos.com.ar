@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gastón Ramos | Software Engineer">
+
+  <title>Recetas hacker para mí</title>
+  <link rel="stylesheet" href="https://gramos.dev/css/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu.css">
+  <!--<![endif]-->
+</head>
+
+<body>
+
+<div class="layout">
+<div id="main">
+
+  <div class="content">
+    <div class="header">
+      <h1>Gastón Ramos</h1>
+      <h2>Blog personal</h2>
+    </div>
+    <h2 id="como-migrar-datos-desde-sidekiq-redis-a-aws-elasticache">Como migrar datos desde Sidekiq (Redis) a AWS Elasticache</h2>
+    <small>Escrito en dos tardes del 20 y 21 de Agosto de 2024</small>
+    <br />
+    <img src="img/sidekiq.jpeg" />
+
+    <p>En estos últimos días estuve trabajando en migrar nuestra
+aplicación principal a <a href="https://aws.amazon.com/es/ecs/">Amazon ECS</a> y una de las tareas que tuve que llevar a cabo,
+entre otras, es migrar los datos de <a href="http://github.com/mperham/sidekiq">Sidekiq</a>,
+que es un sistema de procesamiento en background que puede manejar muchos jobs
+al mismo tiempo y en el mismo proceso, desde el <a href="https://redis.io/">Redis</a>
+que estaba en aptible al nuevo Redis en Amazon.
+<a href="https://aws.amazon.com/es/elasticache/">Elasticache</a>.
+Sidekiq tiene varias colas y keys que usa para guardar datos
+relativos a los jobs, pero el que a nosotros nos interesa
+es la key &#39;schedule&#39; por que tenemos muchos jobs que se ejecutan
+a futuro, y que luego envían mensajes a nuestros usuarios,
+como no queremos perder esto, tenemos que pasarlo a nuestra
+nueva instancia de Redis en ElastiCache.
+Lo que hay que hacer es relativamente sencillo, ( una vez que
+ya sabemos lo que hay que hacer siempre es sencillo :) ),
+y es lo siguiente:</p>
+    <img src="img/redis.jpeg" />
+
+
+    <p>1- Hacer un Dump del Redis en Aptible, en particular de la key &#39;schedule&#39;.
+2- Hacer un restore en el Redis de Amazon ElastiCache.</p>
+<p>Bueno hay una pequeña complicación, y es que ElastiCache acepta
+conexiones únicamente desde instancias de AWS EC2, y para esto
+lo que vamos a hacer es un tunel ssh que nos permita conectarnos
+a ElastiCache desde la computadora que estamos haciendo la migración.
+Así que bueno, vamos al grano, paso 1 hacer el dump. Para
+esto vamos a usar el comando redis-cli que en GNU/Linux Debian lo podemos
+obtener instalando redis-tools <code>apt-get install redis-tools</code>.
+Vamos a necesitar setear algunas variables de entorno con la url 
+de los redis, REDIS_VIEJO va a contener la URL desde dónde vamos a
+hacer el dump y REDIS_NUEVO_AWS la url del redis en ElastiCache
+dónde vamos a hacer el restore:</p>
+<pre><code><span class="hljs-attr">REDIS_VIEJO</span>=redis-aptible.aptible.com
+<span class="hljs-attr">REDIS_NUEVO_AWS</span>=redis-elasticache.amazon.com
+<span class="hljs-attr">REDIS_VIEJO_PORT</span>=<span class="hljs-number">6379</span>
+</code></pre><pre><code>redis-cli -h <span class="hljs-variable">$REDIS_VIEJO</span> --pass <span class="hljs-variable">$REDIS_VIEJO_PASS</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-variable">$REDIS_VIEJO_PORT</span> dump <span class="hljs-string">'my_namespace:schedule'</span> &gt; redis-dump.rdb
+</code></pre><p>esto nos deja un archivo con el dump llamado redis-dump.rdb, RDB es uno de los formatos que
+Redis usa para persistencia, si querés leer un poco más de esto, acá te dejo un link:</p>
+<p><a href="https://redis.io/docs/management/persistence/">https://redis.io/docs/management/persistence/</a></p>
+<p>Después de esto vamos a crear el tunel ssh requerido:</p>
+<pre><code>ssh -<span class="hljs-selector-tag">i</span> ~/.ssh/mi-key<span class="hljs-selector-class">.pem</span> -f -N -L <span class="hljs-number">6380</span>:<span class="hljs-variable">$REDIS_NUEVO_AWS</span>:<span class="hljs-number">6379</span> ec2-user@<span class="hljs-variable">$EC2_INSTANCE_IP</span>
+</code></pre><pre><code>cat ./redis-dump.rdb | head -c-1 | redis-cli -h localhost -x <span class="hljs-keyword">restore</span> <span class="hljs-string">'cool_namespace:schedule'</span> <span class="hljs-number">0</span>
+
+(<span class="hljs-keyword">error</span>) BUSYKEY Target <span class="hljs-keyword">key</span> <span class="hljs-keyword">name</span> already exists.
+</code></pre><p>bueno, parece que la key &#39;cool_namespace:schedule&#39; ya tiene valores y por ese motivo no nos deja
+hacer el restore, podemos ver lo que tiene, usando el comando &#39;ZRANGE&#39;, dado que &#39;cool_namespace:schedule&#39;
+es de typo ZSET, y esto lo podemos verificar así:</p>
+<pre><code>redis-cli -h localhost <span class="hljs-built_in">TYPE</span> <span class="hljs-string">'cool_namespace:schedule'</span>
+
+<span class="hljs-meta"># zset</span>
+</code></pre><pre><code>redis-<span class="hljs-keyword">cli</span> -<span class="hljs-keyword">h</span> localhost ZRANGE 'cool_namespace:schedule' 0 -1
+
+#  <span class="hljs-string">"{\"</span><span class="hljs-keyword">class</span>\<span class="hljs-string">":\"</span>RefreshTokenWorker\<span class="hljs-string">",\"</span><span class="hljs-keyword">args</span>\<span class="hljs-string">":[1053],\"</span>retry\<span class="hljs-string">":t..."</span>
+</code></pre><p>En nuestro caso, no nos interesa conservar los valores que tiene &#39;cool_namespace:schedule&#39;
+por que este es un servidor nuevo, y los datos que tiene son de pruebas así que los
+vamos a borrar.</p>
+<p>Ojo! mucho cuidado por que el siguiente comando es destructivo, verificar bien
+dónde lo estamos ejecutando.</p>
+<pre><code>redis-cli -h elb-enara<span class="hljs-number">-60149.</span>aptible.<span class="hljs-keyword">in</span> -p <span class="hljs-number">6379</span> DEL <span class="hljs-string">'cool_namespace:schedule'</span>
+
+<span class="hljs-meta"># (integer) 1</span>
+</code></pre><p>Ahora podemos verificar que está vacío:</p>
+<pre><code>redis-cli -h localhost ZRANGE <span class="hljs-string">'cool_namespace:schedule'</span> <span class="hljs-number">0</span> -<span class="hljs-number">1</span>
+
+# (<span class="hljs-keyword">empty</span> <span class="hljs-keyword">array</span>)
+</code></pre><p>Una vez hecho esto ahora sí podemos hacer el restore del dump que hicimos al principio:</p>
+<pre><code><span class="hljs-keyword">cat</span> ./redis-elb-rdb |  head -c-1 | redis-<span class="hljs-keyword">cli</span> -<span class="hljs-keyword">h</span> localhost -x <span class="hljs-keyword">restore</span> 'cool_namespace:schedule' 0
+
+OK
+</code></pre><p>Ahora podemos verificar que el restore funcionó:</p>
+<pre><code>redis-cli -h localhost ZRANGE 'cool_namespace:schedule' 0 -1
+
+# 1) "{<span class="hljs-symbol">\"</span>class<span class="hljs-symbol">\"</span>:<span class="hljs-symbol">\"</span>RefreshTokenWorker<span class="hljs-symbol">\"</span>,<span class="hljs-symbol">\"</span>args<span class="hljs-symbol">\"</span>:[1053],<span class="hljs-symbol">\"</span>retry<span class="hljs-symbol">\"</span>:true,<span class="hljs-symbol">\"</span>queue<span class="hljs-symbol">\"</span>:<span class="hljs-symbol">\"</span>default<span class="hljs-symbol">\"</span>,<span class="hljs-symbol">\"</span>jid<span class="hljs-symbol">\"</span>:<span class="hljs-symbol">\"</span>4e38f3ce0fe240ac3c<span class="hljs-symbol">\"</span>,<span class="hljs-symbol">\"</span>created_at<span class="hljs-symbol">\"</span>:1668404647.6717927,<span class="hljs-symbol">\"</span>newrelic<span class="hljs-symbol">\"</span>:{<span class="hljs-symbol">\"</span>traceparent<span class="hljs-symbol">\"</span>:<span class="hljs-symbol">\"</span>00-c9617fc252a55f60f571735fd01ebe8f-c6a55ba2a01a69dd-01<span class="hljs-symbol">\"</span>,<span class="hljs-symbol">\"</span>tracestate<span class="hljs-symbol">\"</span>:<span class="hljs-symbol">\"</span>3333781@nr=0-0-333378...."
+</code></pre><p>Y debemos ver la lista completa del contenido del set, que yo acá no la voy a
+poner completa por que es larga. Algo importante a tener en cuenta es esto:
+(sacado de la doc de redis)</p>
+<p><em>RESTORE checks the RDB version and data checksum. If they don&#39;t match an error is returned.</em></p>
+<p>Es decir que la versiones de RDB deben coincidir o ser compatibles.</p>
+<p>Bueno después de esto el trabajo de migración ya está hecho!, entonces repasemos
+los comandos de Redis que usamos:</p>
+<p><strong>TYPE:</strong> para ver el tipo de dato que contiene una key.</p>
+<p><strong>ZRANGE:</strong> para retornar un rango de valores de un conjunto guardado en una key.</p>
+<p><strong>DEL:</strong> Para eliminar el valor de una key.</p>
+<p><strong>DUMP:</strong> Para serializar el valor contenido en una key (nosotros además lo guardamos en un archivo).</p>
+    <p><strong>RESTORE:</strong> Crea una key y la asocia a un valor que lo obtiene al deserializar el valor serializado provisto.</p>
+<br />
+    <img src="img/elastic-cache.jpeg" />
+    <p>Eso fué todo amigxs. gracias por leerme :)
+Gramos.</p>
+</body></html>
+</div>
+
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+	<li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
