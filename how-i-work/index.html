@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Gastón Ramos approaches software engineering, product development, AI-assisted work, and coding problems.">
+
+  <title>How I Work | Gastón Ramos</title>
+  <link rel="canonical" href="https://gastonramos.com.ar/how-i-work/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How I Work | Gastón Ramos">
+  <meta property="og:description" content="How Gastón Ramos approaches software engineering, product development, AI-assisted work, and coding problems.">
+  <meta property="og:url" content="https://gastonramos.com.ar/how-i-work/">
+  <meta property="og:site_name" content="Gastón Ramos">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How I Work | Gastón Ramos">
+  <meta name="twitter:description" content="How Gastón Ramos approaches software engineering, product development, AI-assisted work, and coding problems.">
+
+  <link rel="stylesheet" href="../css/pure-min.css">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="../css/layouts/side-menu.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="../css/digital.css">
+  <link rel="stylesheet" href="../css/how-i-work.css">
+</head>
+
+<body>
+<div class="layout">
+  <main id="main">
+    <article class="content how-i-work">
+      <header class="header">
+        <h1>How I Work</h1>
+        <h2>Software engineering, from understanding the problem to verifying the result.</h2>
+      </header>
+
+      <p class="introduction">
+        This page describes my engineering background, what I value, how I
+        approach product development, how I use AI, and my general process for
+        solving coding problems.
+      </p>
+
+      <section aria-labelledby="about-me">
+        <h2 id="about-me">About Me</h2>
+        <p>
+          I'm Gaston, and I have over 20 years of experience as a full-stack
+          developer, primarily working with Ruby on Rails. Throughout my career,
+          I've worked at startups as well as large companies.
+        </p>
+        <p>
+          At Clio, I've led several initiatives, contributing from prototyping
+          and planning through production deployment. I enjoy taking ownership
+          of the product I work on and contributing across different areas,
+          including backend development, databases, and UX.
+        </p>
+        <p>
+          I'm looking for work that allows me to reach my full potential and
+          aligns with my values as an engineer.
+        </p>
+      </section>
+
+      <section aria-labelledby="engineering-culture">
+        <h2 id="engineering-culture">What I Value in an Engineering Culture</h2>
+        <p>
+          I value an engineering culture with few unnecessary meetings, a focus
+          on building and delivering, and an emphasis on speed and pragmatism.
+          I'm an Extreme Programming fan, so these ideas are familiar to me.
+        </p>
+        <p>
+          I'm especially interested in technical products built for engineers,
+          including areas related to observability, developer tooling,
+          infrastructure, and production systems.
+        </p>
+      </section>
+
+      <section aria-labelledby="proud-project">
+        <h2 id="proud-project">A Project I'm Proud Of</h2>
+        <p>The project I'm most proud of from my recent role was the Rules Engine at Clio.</p>
+        <p>
+          It was a system to automate accounting actions on bank transactions
+          based on different criteria like amount, transaction type, merchant,
+          description, and other attributes.
+        </p>
+        <p>
+          I built the initial prototype and helped define the architecture.
+          After that, I led the implementation with a small team of engineers.
+        </p>
+        <p>
+          What made it interesting was that the problem was not only technical.
+          It was a product problem too. We had to make something flexible enough
+          for real accounting workflows, but still simple and understandable for users.
+        </p>
+        <p>
+          There were also hard backend problems around background jobs,
+          transaction states, consistency, and making sure asynchronous
+          processes didn't overwrite each other.
+        </p>
+        <p>
+          I'm proud of it because it combined many things I enjoy: product
+          thinking, backend architecture, simplicity, and leading a project from
+          prototype to production.
+        </p>
+      </section>
+
+      <section aria-labelledby="using-ai">
+        <h2 id="using-ai">How I Use AI</h2>
+        <p>
+          I use AI for programming, building prototypes, reviewing pull
+          requests, creating project plans, and writing tickets.
+        </p>
+        <p>
+          My normal workflow is the following: first, I plan what I need to do
+          and try to be as precise as possible when writing the prompt. Once I
+          have the plan, I save it and use it as the basis for moving forward
+          with the code.
+        </p>
+        <p>
+          I review the result critically, and if I find something I'm not happy
+          with, I ask the agent to make the necessary changes. I generally try
+          to simplify the solution until I find the simplest approach that can
+          work correctly.
+        </p>
+        <p>
+          When I finish, I use a separate agent to review what I did and help me
+          write the tests. After that, I review and run the tests, and I manually
+          verify that the behavior is what I expected.
+        </p>
+      </section>
+
+      <section aria-labelledby="problem-solving">
+        <h2 id="problem-solving">My General Coding Problem-Solving Process</h2>
+        <ol class="process">
+          <li>
+            <h3>Understand the problem</h3>
+            <ul>
+              <li>Identify the input and expected output.</li>
+              <li>Restate the problem in my own words.</li>
+              <li>Review the provided examples.</li>
+              <li>Identify ambiguities and constraints.</li>
+              <li>Note the most important edge cases.</li>
+            </ul>
+            <blockquote>
+              <p>What transformation must happen between the input and the output?</p>
+            </blockquote>
+          </li>
+          <li>
+            <h3>Design a simple solution</h3>
+            <ul>
+              <li>Solve one example manually.</li>
+              <li>Choose an appropriate data structure, such as an array, hash, set, stack, or queue.</li>
+              <li>Start with the simplest correct solution.</li>
+              <li>Estimate time and space complexity.</li>
+              <li>Avoid optimizing before the problem is understood.</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Define test cases</h3>
+            <ul>
+              <li>A normal example.</li>
+              <li>Empty or minimum input.</li>
+              <li>Duplicates.</li>
+              <li>Zero or negative values when relevant.</li>
+              <li>A case that could break a naive solution.</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Implement</h3>
+            <ul>
+              <li>Use a small method with a descriptive name.</li>
+              <li>Use clear variable names.</li>
+              <li>Avoid premature abstractions.</li>
+              <li>Prefer standard language data structures and methods.</li>
+              <li>Do not mutate the input unless intentional.</li>
+              <li>Handle meaningful edge cases explicitly.</li>
+              <li>Keep the main logic separate from test or demonstration code.</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Test and debug</h3>
+            <ul>
+              <li>Run the examples from the problem.</li>
+              <li>Run additional edge cases.</li>
+              <li>Read the complete error before changing code.</li>
+              <li>Check indexes, termination conditions, and unexpected null or nil values.</li>
+              <li>Verify that the solution does not accidentally depend on ordering.</li>
+              <li>Understand the cause of a failure before patching it.</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Review and explain</h3>
+            <ul>
+              <li>Re-read the problem.</li>
+              <li>Confirm the return type and exact output.</li>
+              <li>Remove debugging and dead code.</li>
+              <li>Simplify unclear names or conditions.</li>
+              <li>Explain why the solution is correct.</li>
+              <li>State time and space complexity.</li>
+              <li>Mention limitations honestly.</li>
+            </ul>
+          </li>
+        </ol>
+        <blockquote class="principle">
+          <p>First make it correct, then clear, and only then optimize it.</p>
+        </blockquote>
+      </section>
+
+      <section aria-labelledby="thought-process">
+        <h2 id="thought-process">Explaining My Thought Process</h2>
+        <p>
+          I communicate decisions at meaningful checkpoints rather than
+          narrating every keystroke.
+        </p>
+        <ol>
+          <li>Confirm my interpretation of the problem.</li>
+          <li>Describe the initial approach.</li>
+          <li>Explain the selected data structure.</li>
+          <li>Mention important edge cases.</li>
+          <li>Implement without talking continuously.</li>
+          <li>Explain what each test validates.</li>
+          <li>Finish with correctness and complexity.</li>
+        </ol>
+        <div class="example-phrases" aria-labelledby="example-phrases">
+          <h3 id="example-phrases">Example phrases</h3>
+          <ul>
+            <li>“Let me first make sure I understand the problem correctly.”</li>
+            <li>“My first approach would be to...”</li>
+            <li>“I think a hash would be useful here because...”</li>
+            <li>“Before coding, I want to check a couple of edge cases.”</li>
+            <li>“This solution requires one pass through the input.”</li>
+            <li>“The time complexity is O(n), and the space complexity is O(n).”</li>
+            <li>“Let me test it with the example from the prompt.”</li>
+            <li>“I see a simpler way to express this condition.”</li>
+          </ul>
+        </div>
+        <p>
+          Changing direction based on new evidence demonstrates judgment rather
+          than failure.
+        </p>
+      </section>
+
+      <section aria-labelledby="ai-problem-solving">
+        <h2 id="ai-problem-solving">AI During Problem Solving</h2>
+        <ul>
+          <li>Use AI to review the interpretation, identify edge cases, or challenge the proposed complexity.</li>
+          <li>Never accept code I cannot explain and reconstruct independently.</li>
+          <li>Review every generated change.</li>
+          <li>Execute tests and verify behavior manually.</li>
+          <li>Retain ownership of the design and final technical decisions.</li>
+        </ul>
+      </section>
+    </article>
+
+    <footer class="content">
+      <div class="header"></div>
+      <nav class="pure-menu pure-menu-open pure-menu-horizontal" aria-label="Site navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/talks">Talks</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </main>
+</div>
+
+<script src="../js/retro-mode.js"></script>
+</body>
+</html>

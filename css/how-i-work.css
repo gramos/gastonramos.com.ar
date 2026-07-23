@@ -1,0 +1,78 @@
+.how-i-work .introduction {
+    margin-top: 2em;
+    font-size: 1.1em;
+}
+
+.how-i-work section > h2 {
+    margin: 2.5em 0 0.75em;
+    color: #555;
+    font-weight: 300;
+}
+
+.how-i-work h3 {
+    margin-bottom: 0.4em;
+    color: #666;
+    font-weight: 400;
+}
+
+.how-i-work ul,
+.how-i-work ol {
+    padding-left: 1.5em;
+}
+
+.how-i-work li + li {
+    margin-top: 0.3em;
+}
+
+.how-i-work .process > li {
+    margin-top: 1.8em;
+    padding-left: 0.35em;
+}
+
+.how-i-work blockquote {
+    margin: 1.25em 0;
+    padding: 0.1em 1.25em;
+    color: #555;
+    border-left: 3px solid #ccc;
+}
+
+.how-i-work .principle {
+    margin-top: 2em;
+    font-size: 1.1em;
+}
+
+.how-i-work .example-phrases {
+    margin: 1.5em 0;
+    padding: 0.1em 1.25em 1em;
+    background: #f7f7f7;
+    border-left: 3px solid #ddd;
+}
+
+body.retro-mode .how-i-work section > h2,
+body.retro-mode .how-i-work h3,
+body.retro-mode .how-i-work blockquote {
+    color: #ffb52e;
+}
+
+body.retro-mode .how-i-work blockquote,
+body.retro-mode .how-i-work .example-phrases {
+    border-left-color: #7d4b08;
+}
+
+body.retro-mode .how-i-work .example-phrases {
+    background: #120d06;
+}
+
+@media (max-width: 35em) {
+    .how-i-work ul,
+    .how-i-work ol {
+        padding-left: 1.2em;
+    }
+
+    .how-i-work blockquote,
+    .how-i-work .example-phrases {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 1em;
+    }
+}
