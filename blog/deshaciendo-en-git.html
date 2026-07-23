@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gastón Ramos | Software Engineer">
+
+  <title>Deshacer cambios en git</title>
+  <link rel="stylesheet" href="https://gramos.dev/css/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://gramos.dev/css/layouts/side-menu.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="../css/digital.css">
+</head>
+
+<body>
+
+<div class="layout">
+<div id="main">
+
+  <div class="content">
+    <div class="header">
+      <h1>Gastón Ramos</h1>
+      <h2>Blog personal</h2>
+    </div>
+
+    <h2>Deshacer cambios en Git</h2>
+    <small>Escrito en dos mañanas del 29 y 30 de Septiembre de 2024</small>
+    <img src="img/git-logo.svg.png" width="60%" height="60%"/>
+    <h3>La idea</h3>
+    <p>
+      La idea de este post es hacer un repaso de las 3 formas básicas para deshacer cambios
+      en git, diría que son cosas muy necesarias en el día a día, así que ahí vamos!
+    </p>
+
+    <h3>1. Como cambiar el último commit: ( git commit --amend )</h3>
+    <p>
+      Si acabamos de hacer un commit y nos damos cuenta de que por ejemplo nos olvidamos
+      de agregar un archivo, o que queremos mejorar/cambiar el mensaje de commit, podemos "cambiar" el último
+      commit con <code>"git commit --amend"</code>
+      Entonces supongamos que hicimos, esto:
+    </p>
+    <p>
+      <pre>
+        > git add my_file_A.rb
+        > git commit -m "Adding some new files"
+        [master (root-commit) c798093] Add my files
+         1 file changed, 0 insertions(+), 0 deletions(-)
+         create mode 100644 my_file_A.rb
+      </pre>
+    </p>
+
+    <p>
+      Ahora nos damos cuenta de que nos olvidamos de agregar un archivo <i>my_file_B.rb</i>
+      en nuestro último commit, y queremos agregarlo, entonces podemos hacer esto:
+    </p>
+
+    <pre>
+      > git add my_file_B.rb
+      > git commit --amend
+    </pre>
+
+    <p>
+      Y entonces vamos a ver que se abre nuestro editor configurado por defecto,
+      y el mensaje de commit es el último, el cuál podemos modificar y además
+      ahora también está nuestro archivo olvidado "my_file_B"
+    <pre>
+      Adding some new files
+
+      # Please enter the commit message for your changes. Lines starting
+      # with '#' will be ignored, and an empty message aborts the commit.
+      #
+      # Date:      Fri Sep 27 12:19:31 2024 -0300
+      #
+      # On branch master
+      #
+      # Initial commit
+      #
+      # Changes to be committed:
+      #   new file:   my_file_A.rb
+      #   new file:   my_file_B.rb
+    </pre>
+
+    <p>
+      Guardamos y salimos, y listo. Debemos tener en cuenta, que esto nos cambia
+      el commit, y por consiguiente va a cambiar el commit hash. En síntesis,
+      este comando nos permite cambiar el commit más reciente reemplazándolo por
+      completo.
+    </p>
+
+    <h3>2. Sacar un archivo de la zona de Stage: ( git restore --staged &#60;file&#62; )</h3>
+    <p>
+      Lo siguiente es para el caso en el que hayamos agregado un archivo modificado
+      para ser enviado en el siguiente commit, es decir un archivo confirmado.
+      Vamos a suponer que hicimos esto:
+
+    </p>
+      Modificamos los archivos:
+    <p>
+    <pre>
+      > echo "hi" >> my_file_A.rb
+      > echo "hi-B" >> my_file_B.rb
+      > git status
+      On branch master
+      Changes not staged for commit:
+      (use "git add &#60;file&#62;..." to update what will be committed)
+      (use "git restore &#60;file&#62;..." to discard changes in working directory)
+	modified:   my_file_A.rb
+	modified:   my_file_B.rb
+
+      no changes added to commit (use "git add" and/or "git commit -a")
+    </pre>
+
+    <p>
+      Entonces ahora agregamos los dos archivos para luego commitearlos
+    </p>
+
+    <pre>
+      > git add my_file_A.rb my_file_B.rb
+      > git status
+      On branch master
+      Changes to be committed:
+      (use "git restore --staged &#60;file&#62;..." to unstage)
+	modified:   my_file_A.rb
+	modified:   my_file_B.rb
+    </pre>
+
+    <p>
+      Pero en este puntos nos damos cuenta que queremos hacer 2 commits, uno por cada archivo,
+      entonces lo primero que necesitamos hacer es sacar my_file_B.rb,
+      y lo hacemos de la siguiente manera:
+    </p>
+    <pre>
+      > git restore --staged my_file_B.rb
+
+      > git status
+      On branch master
+      Changes to be committed:
+        (use "git restore --staged <file>..." to unstage)
+	modified:   my_file_A.rb
+
+      Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git restore <file>..." to discard changes in working directory)
+	modified:   my_file_B.rb
+
+    </pre>
+    <p>
+      Ahora podemos comitear <i>my_file_A.rb,</i>que está confirmado,
+      y luego agregar (con git add) y comitear <i>my_file_B.rb</i>
+    </p>
+
+    <h3>3. Revertir los cambios en un archivo: ( git restore &#60;file&#62; )</h3>
+    <p>
+      Si nos vemos en el caso de que cambiamos un archivos, pero no queremos mantener esos
+      cambios, git nos permite revertirlos y volver el archivo a la versión del último
+      commit de nuestro working directory, hay que tener cuidado por que cualquier cambio
+      que hayamos hecho en el archivo se va a perder.
+      Por ejemplo ahora vamos a modificar el archivo file_A.rb para luego hacer un restore
+    </p>
+
+    <pre>
+      > echo "hi, me again" >> my_file_A.rb
+      > git status
+      On branch master
+      Changes not staged for commit:
+        (use "git add &#60;file&#62;..." to update what will be committed)
+        (use "git restore &#60;file&#62;..." to discard changes in working directory)
+	modified:   my_file_A.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+      > git restore file_A.rb
+      > git status
+      On branch master
+      nothing to commit, working tree clean
+    </pre>
+    <p>
+      Bueno esto fué todo, escribí este artículo más para mí, por que siempre
+      es bueno volver a repasar las cosas fundamentales, espero que te sea útil.
+
+      Gracias por leerme. Gramos ;)
+    </p>
+</div>
+
+  <div class="content">
+    <div class="header"></div>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+	<li><a href="/">Root</a></li>
+	<li><a href="/music">Music</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/talks">Talks</a></li>
+	<li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+<script src="../js/retro-mode.js"></script>
+</body>
+</html>
