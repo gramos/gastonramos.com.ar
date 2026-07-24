@@ -7,8 +7,9 @@
 }
 
 #retro-mode-toggle {
-    display: inline-block;
-    margin: 0 0 1.25em;
+    display: block;
+    width: max-content;
+    margin: 0 auto 1.25em;
     padding: 0.3em 0.55em;
     color: #555;
     background: #fff;
@@ -34,6 +35,10 @@
 #retro-mode-toggle:focus {
     color: #111;
     background: #eee;
+}
+
+.retro-header-sprite {
+    display: none;
 }
 
 #main > .content:last-child .pure-menu {
@@ -63,6 +68,11 @@ body.retro-mode .header h2,
 body.retro-mode .content-subhead {
     color: #b86f0b;
     font-weight: 400;
+}
+
+body.retro-mode .header h2 {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 body.retro-mode .content > h2 {
@@ -125,6 +135,16 @@ body.retro-mode #retro-mode-toggle {
     border-radius: 0;
     font-family: "VT323", monospace;
     font-size: 15px;
+}
+
+body.retro-mode .content img.retro-header-sprite {
+    display: inline-block;
+    width: auto;
+    height: 48px;
+    margin: 0 0.35em 0.2em 0;
+    border: 0;
+    vertical-align: middle;
+    image-rendering: pixelated;
 }
 
 body.retro-mode #retro-mode-toggle:hover,

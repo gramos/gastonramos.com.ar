@@ -2,6 +2,7 @@
   "use strict";
 
   var storageKey = "retro-mode";
+  var scriptUrl = document.currentScript ? document.currentScript.src : "";
   var button = document.getElementById("retro-mode-toggle");
 
   if (!button) {
@@ -18,6 +19,16 @@
       document.body.insertBefore(button, document.body.firstChild);
     }
   }
+
+  var sprite = document.createElement("img");
+  sprite.className = "retro-header-sprite";
+  sprite.src = scriptUrl ?
+    new URL("../public/img/retro/platform-adventurer.png", scriptUrl).href :
+    "/public/img/retro/platform-adventurer.png";
+  sprite.alt = "";
+  sprite.setAttribute("aria-hidden", "true");
+  var subtitle = button.parentNode.querySelector("h2");
+  button.parentNode.insertBefore(sprite, subtitle || button);
 
   function normalizeFooter() {
     var menus = document.querySelectorAll(".pure-menu-horizontal ul");
